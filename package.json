@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
+    "postinstall": "prisma generate",
     "seed-db": "npx tsx src/scripts/seed-db.ts",
     "sync": "curl -s -X POST http://localhost:3000/api/sync -H \"Authorization: Bearer $SYNC_SECRET\" | npx pino-pretty 2>/dev/null || true"
   },
