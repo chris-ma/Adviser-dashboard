@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Watchlist {
+  id                  String          @id @default(cuid())
+  name                String
+  entityType          String
+  alertOnMovement     Boolean         @default(true)
+  alertOnStatusChange Boolean         @default(true)
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+  items               WatchlistItem[]
+}
+
+model WatchlistItem {
+  id          String    @id @default(cuid())
+  watchlistId String
+  watchlist   Watchlist @relation(fields: [watchlistId], references: [id], onDelete: Cascade)
+  entityId    String
+  entityName  String
+  addedAt     DateTime  @default(now())
+
+  @@unique([watchlistId, entityId])
+}
+
+model SavedSearch {
+  id          String   @id @default(cuid())
+  name        String
+  module      String
+  queryParams String
+  createdAt   DateTime @default(now())
+}

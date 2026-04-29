@@ -1,0 +1,204 @@
+{
+  "snapshot": {
+    "asAtDate": "2024-03-31",
+    "source": "IBISWorld Financial Planning Industry Report FIN3340, 2024; ASIC Financial Adviser Register",
+    "methodology": "Industry revenue from IBISWorld sector report. Adviser and licensee counts derived from ASIC Financial Adviser Register snapshot. Penetration rate based on ABS adult population estimate.",
+    "totalRevenue": 6.1,
+    "totalBusinesses": 17530,
+    "totalAdvisers": 15847,
+    "totalLicensees": 2241,
+    "averageRevenuePerBusiness": 348000,
+    "averageAdvisersPerPractice": 2.3,
+    "penetrationRate": 12.4,
+    "byState": [
+      {
+        "state": "NSW",
+        "adviserCount": 5229,
+        "businessCount": 5783,
+        "revenue": 2.13,
+        "penetrationRate": 13.1
+      },
+      {
+        "state": "VIC",
+        "adviserCount": 4279,
+        "businessCount": 4733,
+        "revenue": 1.74,
+        "penetrationRate": 13
+      },
+      {
+        "state": "QLD",
+        "adviserCount": 2852,
+        "businessCount": 3156,
+        "revenue": 1.04,
+        "penetrationRate": 11.8
+      },
+      {
+        "state": "WA",
+        "adviserCount": 1744,
+        "businessCount": 1929,
+        "revenue": 0.65,
+        "penetrationRate": 12.5
+      },
+      {
+        "state": "SA",
+        "adviserCount": 951,
+        "businessCount": 1052,
+        "revenue": 0.32,
+        "penetrationRate": 10.9
+      },
+      {
+        "state": "ACT",
+        "adviserCount": 476,
+        "businessCount": 526,
+        "revenue": 0.14,
+        "penetrationRate": 11.5
+      },
+      {
+        "state": "TAS",
+        "adviserCount": 238,
+        "businessCount": 263,
+        "revenue": 0.07,
+        "penetrationRate": 9.2
+      },
+      {
+        "state": "NT",
+        "adviserCount": 79,
+        "businessCount": 87,
+        "revenue": 0.02,
+        "penetrationRate": 7.8
+      }
+    ],
+    "byChannel": [
+      {
+        "channel": "Aligned",
+        "adviserCount": 6339,
+        "percentage": 40
+      },
+      {
+        "channel": "Independent",
+        "adviserCount": 5546,
+        "percentage": 35
+      },
+      {
+        "channel": "Institutional",
+        "adviserCount": 3169,
+        "percentage": 20
+      },
+      {
+        "channel": "Direct",
+        "adviserCount": 793,
+        "percentage": 5
+      }
+    ]
+  },
+  "timeSeries": [
+    {
+      "metric": "Total Advisers",
+      "unit": "count",
+      "source": "ASIC Financial Adviser Register",
+      "dataPoints": [
+        {
+          "date": "2018-06-30",
+          "value": 28647,
+          "note": "Pre-Royal Commission peak"
+        },
+        {
+          "date": "2019-06-30",
+          "value": 26832,
+          "note": "Royal Commission impact begins"
+        },
+        {
+          "date": "2020-06-30",
+          "value": 22596,
+          "note": "FASEA education requirements announced"
+        },
+        {
+          "date": "2021-06-30",
+          "value": 19515,
+          "note": "Continued attrition"
+        },
+        {
+          "date": "2022-06-30",
+          "value": 16812,
+          "note": "Market stabilising"
+        },
+        {
+          "date": "2023-06-30",
+          "value": 15983,
+          "note": "Near bottom"
+        },
+        {
+          "date": "2024-03-31",
+          "value": 15847,
+          "note": "Current"
+        }
+      ]
+    },
+    {
+      "metric": "Industry Revenue",
+      "unit": "AUD billions",
+      "source": "IBISWorld FIN3340",
+      "dataPoints": [
+        {
+          "date": "2018-06-30",
+          "value": 6.8
+        },
+        {
+          "date": "2019-06-30",
+          "value": 6.4
+        },
+        {
+          "date": "2020-06-30",
+          "value": 5.9
+        },
+        {
+          "date": "2021-06-30",
+          "value": 5.7
+        },
+        {
+          "date": "2022-06-30",
+          "value": 5.9
+        },
+        {
+          "date": "2023-06-30",
+          "value": 6
+        },
+        {
+          "date": "2024-03-31",
+          "value": 6.1
+        }
+      ]
+    },
+    {
+      "metric": "Advice Penetration Rate",
+      "unit": "percentage",
+      "source": "Adviser Ratings Australian Advice Landscape 2025",
+      "dataPoints": [
+        {
+          "date": "2019-06-30",
+          "value": 13.8
+        },
+        {
+          "date": "2020-06-30",
+          "value": 12.9
+        },
+        {
+          "date": "2021-06-30",
+          "value": 11.8
+        },
+        {
+          "date": "2022-06-30",
+          "value": 11.6
+        },
+        {
+          "date": "2023-06-30",
+          "value": 12.1
+        },
+        {
+          "date": "2024-03-31",
+          "value": 12.4
+        }
+      ]
+    }
+  ]
+}

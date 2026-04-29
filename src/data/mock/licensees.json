@@ -1,0 +1,1726 @@
+[
+  {
+    "id": "lic_001",
+    "afslNumber": "232706",
+    "name": "AMP Financial Planning Pty Ltd",
+    "tradingName": "AMP Financial Planning",
+    "parentGroup": "AMP",
+    "abn": "09821135426",
+    "acn": "123471550",
+    "registrationDate": "2008-09-20",
+    "status": "Current",
+    "headOfficeState": "ACT",
+    "headOfficePostcode": "2601",
+    "adviserCount": 253,
+    "practiceCount": 137,
+    "channel": "Aligned",
+    "fum": 9878,
+    "revenueEstimate": 762,
+    "tier": "Top 20",
+    "products": [
+      "Retirement savings accounts",
+      "Foreign exchange contracts",
+      "Superannuation",
+      "Standard margin lending facility",
+      "Managed investment schemes - Investor directed portfolio services",
+      "Deposit products",
+      "Government debentures, stocks or bonds",
+      "Securities"
+    ],
+    "website": "https://www.ampfinancialplanning.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 279
+      },
+      {
+        "date": "2019-06-30",
+        "count": 268
+      },
+      {
+        "date": "2020-06-30",
+        "count": 257
+      },
+      {
+        "date": "2021-06-30",
+        "count": 243
+      },
+      {
+        "date": "2022-06-30",
+        "count": 250
+      },
+      {
+        "date": "2023-06-30",
+        "count": 250
+      },
+      {
+        "date": "2024-06-30",
+        "count": 253
+      }
+    ],
+    "description": "AMP Financial Planning Pty Ltd is part of the AMP group and a top 20 Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_002",
+    "afslNumber": "230522",
+    "name": "IOOF Investment Management Limited",
+    "tradingName": "Insignia Financial Financial Planning",
+    "parentGroup": "Insignia Financial",
+    "abn": "59010332832",
+    "acn": "518097108",
+    "registrationDate": "2010-04-23",
+    "status": "Current",
+    "headOfficeState": "NSW",
+    "headOfficePostcode": "2250",
+    "adviserCount": 472,
+    "practiceCount": 160,
+    "channel": "Aligned",
+    "fum": 62846,
+    "revenueEstimate": 105,
+    "tier": "Top 20",
+    "products": [
+      "Deposit products",
+      "Foreign exchange contracts",
+      "Managed investment schemes - Investor directed portfolio services",
+      "Securities",
+      "Derivatives"
+    ],
+    "website": "https://www.ioofinvestmentmanage.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 452
+      },
+      {
+        "date": "2019-06-30",
+        "count": 451
+      },
+      {
+        "date": "2020-06-30",
+        "count": 440
+      },
+      {
+        "date": "2021-06-30",
+        "count": 450
+      },
+      {
+        "date": "2022-06-30",
+        "count": 455
+      },
+      {
+        "date": "2023-06-30",
+        "count": 464
+      },
+      {
+        "date": "2024-06-30",
+        "count": 472
+      }
+    ],
+    "description": "IOOF Investment Management Limited is part of the Insignia Financial group and a top 20 Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_003",
+    "afslNumber": "240687",
+    "name": "Securitor Financial Group Limited",
+    "tradingName": "BT Financial Group Financial Planning",
+    "parentGroup": "BT Financial Group",
+    "abn": "45401063592",
+    "acn": "472021986",
+    "registrationDate": "2012-12-10",
+    "status": "Current",
+    "headOfficeState": "NSW",
+    "headOfficePostcode": "2340",
+    "adviserCount": 247,
+    "practiceCount": 79,
+    "channel": "Aligned",
+    "fum": 18992,
+    "revenueEstimate": 720,
+    "tier": "Top 20",
+    "products": [
+      "Foreign exchange contracts",
+      "Derivatives",
+      "Deposit products",
+      "Government debentures, stocks or bonds",
+      "Superannuation",
+      "Securities"
+    ],
+    "website": "https://www.securitorfinancialgr.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 251
+      },
+      {
+        "date": "2019-06-30",
+        "count": 248
+      },
+      {
+        "date": "2020-06-30",
+        "count": 236
+      },
+      {
+        "date": "2021-06-30",
+        "count": 239
+      },
+      {
+        "date": "2022-06-30",
+        "count": 243
+      },
+      {
+        "date": "2023-06-30",
+        "count": 242
+      },
+      {
+        "date": "2024-06-30",
+        "count": 247
+      }
+    ],
+    "description": "Securitor Financial Group Limited is part of the BT Financial Group group and a top 20 Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_004",
+    "afslNumber": "234665",
+    "name": "Charter Financial Planning Limited",
+    "tradingName": "AMP Financial Planning",
+    "parentGroup": "AMP",
+    "abn": "73992432065",
+    "acn": "029214926",
+    "registrationDate": "2011-03-09",
+    "status": "Current",
+    "headOfficeState": "WA",
+    "headOfficePostcode": "6000",
+    "adviserCount": 412,
+    "practiceCount": 209,
+    "channel": "Aligned",
+    "fum": 59616,
+    "revenueEstimate": 326,
+    "tier": "Top 20",
+    "products": [
+      "Derivatives",
+      "Foreign exchange contracts",
+      "Superannuation",
+      "Deposit products",
+      "Life products - Life risk insurance",
+      "Managed investment schemes - Other"
+    ],
+    "website": "https://www.charterfinancialplan.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 441
+      },
+      {
+        "date": "2019-06-30",
+        "count": 431
+      },
+      {
+        "date": "2020-06-30",
+        "count": 419
+      },
+      {
+        "date": "2021-06-30",
+        "count": 412
+      },
+      {
+        "date": "2022-06-30",
+        "count": 421
+      },
+      {
+        "date": "2023-06-30",
+        "count": 414
+      },
+      {
+        "date": "2024-06-30",
+        "count": 412
+      }
+    ],
+    "description": "Charter Financial Planning Limited is part of the AMP group and a top 20 Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_005",
+    "afslNumber": "232705",
+    "name": "Hillross Financial Services Limited",
+    "tradingName": "AMP Financial Planning",
+    "parentGroup": "AMP",
+    "abn": "13198268552",
+    "acn": "089633788",
+    "registrationDate": "2011-06-24",
+    "status": "Current",
+    "headOfficeState": "VIC",
+    "headOfficePostcode": "3220",
+    "adviserCount": 87,
+    "practiceCount": 31,
+    "channel": "Aligned",
+    "fum": 11310,
+    "revenueEstimate": 171,
+    "tier": "Top 20",
+    "products": [
+      "Retirement savings accounts",
+      "Government debentures, stocks or bonds",
+      "Securities",
+      "Standard margin lending facility",
+      "Life products - Life risk insurance",
+      "Derivatives",
+      "Deposit products",
+      "Managed investment schemes - Other"
+    ],
+    "website": "https://www.hillrossfinancialser.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 101
+      },
+      {
+        "date": "2019-06-30",
+        "count": 91
+      },
+      {
+        "date": "2020-06-30",
+        "count": 92
+      },
+      {
+        "date": "2021-06-30",
+        "count": 81
+      },
+      {
+        "date": "2022-06-30",
+        "count": 83
+      },
+      {
+        "date": "2023-06-30",
+        "count": 78
+      },
+      {
+        "date": "2024-06-30",
+        "count": 87
+      }
+    ],
+    "description": "Hillross Financial Services Limited is part of the AMP group and a top 20 Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_006",
+    "afslNumber": "230522",
+    "name": "MLC Advice Pty Ltd",
+    "tradingName": "MLC/NULIS Financial Planning",
+    "parentGroup": "MLC/NULIS",
+    "abn": "32293867554",
+    "acn": "172061999",
+    "registrationDate": "2004-12-03",
+    "status": "Current",
+    "headOfficeState": "NSW",
+    "headOfficePostcode": "2340",
+    "adviserCount": 338,
+    "practiceCount": 221,
+    "channel": "Aligned",
+    "fum": 74624,
+    "revenueEstimate": 371,
+    "tier": "Top 20",
+    "products": [
+      "Managed investment schemes - Other",
+      "Derivatives",
+      "Standard margin lending facility",
+      "Managed investment schemes - Investor directed portfolio services",
+      "Government debentures, stocks or bonds",
+      "Foreign exchange contracts",
+      "Securities",
+      "Superannuation"
+    ],
+    "website": "https://www.mlcadviceptyltd.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 338
+      },
+      {
+        "date": "2019-06-30",
+        "count": 342
+      },
+      {
+        "date": "2020-06-30",
+        "count": 343
+      },
+      {
+        "date": "2021-06-30",
+        "count": 350
+      },
+      {
+        "date": "2022-06-30",
+        "count": 352
+      },
+      {
+        "date": "2023-06-30",
+        "count": 351
+      },
+      {
+        "date": "2024-06-30",
+        "count": 338
+      }
+    ],
+    "description": "MLC Advice Pty Ltd is part of the MLC/NULIS group and a top 20 Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_007",
+    "afslNumber": "227232",
+    "name": "Count Financial Limited",
+    "tradingName": "Count Financial Planning",
+    "parentGroup": "Count",
+    "abn": "73288895576",
+    "acn": "778330504",
+    "registrationDate": "2007-09-07",
+    "status": "Current",
+    "headOfficeState": "QLD",
+    "headOfficePostcode": "4217",
+    "adviserCount": 443,
+    "practiceCount": 214,
+    "channel": "Aligned",
+    "fum": 49313,
+    "revenueEstimate": 72,
+    "tier": "Top 20",
+    "products": [
+      "Derivatives",
+      "Government debentures, stocks or bonds",
+      "Securities"
+    ],
+    "website": "https://www.countfinanciallimite.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 433
+      },
+      {
+        "date": "2019-06-30",
+        "count": 443
+      },
+      {
+        "date": "2020-06-30",
+        "count": 431
+      },
+      {
+        "date": "2021-06-30",
+        "count": 429
+      },
+      {
+        "date": "2022-06-30",
+        "count": 436
+      },
+      {
+        "date": "2023-06-30",
+        "count": 440
+      },
+      {
+        "date": "2024-06-30",
+        "count": 443
+      }
+    ],
+    "description": "Count Financial Limited is part of the Count group and a top 20 Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_008",
+    "afslNumber": "243313",
+    "name": "Synchron Advice Pty Ltd",
+    "tradingName": "Synchron Financial Planning",
+    "parentGroup": "Synchron",
+    "abn": "37240098641",
+    "acn": "125762975",
+    "registrationDate": "2008-10-14",
+    "status": "Current",
+    "headOfficeState": "QLD",
+    "headOfficePostcode": "4006",
+    "adviserCount": 53,
+    "practiceCount": 23,
+    "channel": "Independent",
+    "fum": 1615,
+    "revenueEstimate": 21,
+    "tier": "Mid-tier",
+    "products": [
+      "Foreign exchange contracts",
+      "Life products - Investment life insurance",
+      "Managed investment schemes - Investor directed portfolio services",
+      "Securities",
+      "Superannuation",
+      "Derivatives",
+      "Deposit products"
+    ],
+    "website": "https://www.synchronadviceptyltd.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 44
+      },
+      {
+        "date": "2019-06-30",
+        "count": 42
+      },
+      {
+        "date": "2020-06-30",
+        "count": 41
+      },
+      {
+        "date": "2021-06-30",
+        "count": 42
+      },
+      {
+        "date": "2022-06-30",
+        "count": 45
+      },
+      {
+        "date": "2023-06-30",
+        "count": 55
+      },
+      {
+        "date": "2024-06-30",
+        "count": 53
+      }
+    ],
+    "description": "Synchron Advice Pty Ltd is part of the Synchron group and a mid-tier Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_009",
+    "afslNumber": "229429",
+    "name": "Centrepoint Alliance Limited",
+    "tradingName": "Centrepoint Alliance Financial Planning",
+    "parentGroup": "Centrepoint Alliance",
+    "abn": "86106059536",
+    "acn": "459399101",
+    "registrationDate": "1999-04-17",
+    "status": "Current",
+    "headOfficeState": "VIC",
+    "headOfficePostcode": "3141",
+    "adviserCount": 8,
+    "practiceCount": 5,
+    "channel": "Aligned",
+    "fum": 3574,
+    "revenueEstimate": 8,
+    "tier": "Mid-tier",
+    "products": [
+      "Foreign exchange contracts",
+      "Retirement savings accounts",
+      "Deposit products",
+      "Standard margin lending facility"
+    ],
+    "website": "https://www.centrepointalliancel.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 27
+      },
+      {
+        "date": "2019-06-30",
+        "count": 28
+      },
+      {
+        "date": "2020-06-30",
+        "count": 29
+      },
+      {
+        "date": "2021-06-30",
+        "count": 15
+      },
+      {
+        "date": "2022-06-30",
+        "count": 9
+      },
+      {
+        "date": "2023-06-30",
+        "count": 10
+      },
+      {
+        "date": "2024-06-30",
+        "count": 8
+      }
+    ],
+    "description": "Centrepoint Alliance Limited is part of the Centrepoint Alliance group and a mid-tier Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_010",
+    "afslNumber": "229892",
+    "name": "Lifespan Financial Planning Pty Ltd",
+    "tradingName": "Lifespan Financial Planning",
+    "parentGroup": "Lifespan",
+    "abn": "37398477195",
+    "acn": "838309039",
+    "registrationDate": "2014-03-18",
+    "status": "Current",
+    "headOfficeState": "QLD",
+    "headOfficePostcode": "4557",
+    "adviserCount": 38,
+    "practiceCount": 14,
+    "channel": "Institutional",
+    "fum": 3343,
+    "revenueEstimate": 25,
+    "tier": "Mid-tier",
+    "products": [
+      "Securities",
+      "Standard margin lending facility",
+      "Managed investment schemes - Other",
+      "Government debentures, stocks or bonds"
+    ],
+    "website": "https://www.lifespanfinancialpla.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 43
+      },
+      {
+        "date": "2019-06-30",
+        "count": 35
+      },
+      {
+        "date": "2020-06-30",
+        "count": 24
+      },
+      {
+        "date": "2021-06-30",
+        "count": 28
+      },
+      {
+        "date": "2022-06-30",
+        "count": 33
+      },
+      {
+        "date": "2023-06-30",
+        "count": 43
+      },
+      {
+        "date": "2024-06-30",
+        "count": 38
+      }
+    ],
+    "description": "Lifespan Financial Planning Pty Ltd is part of the Lifespan group and a mid-tier Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_011",
+    "afslNumber": "238256",
+    "name": "Matrix Planning Solutions Limited",
+    "tradingName": "Matrix Financial Planning",
+    "parentGroup": "Matrix",
+    "abn": "10708700933",
+    "acn": "899730754",
+    "registrationDate": "2013-07-02",
+    "status": "Current",
+    "headOfficeState": "NSW",
+    "headOfficePostcode": "2170",
+    "adviserCount": 69,
+    "practiceCount": 40,
+    "channel": "Aligned",
+    "fum": 2717,
+    "revenueEstimate": 5,
+    "tier": "Mid-tier",
+    "products": [
+      "Retirement savings accounts",
+      "Life products - Life risk insurance",
+      "Standard margin lending facility",
+      "Derivatives",
+      "Deposit products"
+    ],
+    "website": "https://www.matrixplanningsoluti.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 86
+      },
+      {
+        "date": "2019-06-30",
+        "count": 94
+      },
+      {
+        "date": "2020-06-30",
+        "count": 88
+      },
+      {
+        "date": "2021-06-30",
+        "count": 76
+      },
+      {
+        "date": "2022-06-30",
+        "count": 64
+      },
+      {
+        "date": "2023-06-30",
+        "count": 68
+      },
+      {
+        "date": "2024-06-30",
+        "count": 69
+      }
+    ],
+    "description": "Matrix Planning Solutions Limited is part of the Matrix group and a mid-tier Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_012",
+    "afslNumber": "230686",
+    "name": "National Australia Bank Limited",
+    "tradingName": "NAB Financial Planning",
+    "parentGroup": "NAB",
+    "abn": "85905956646",
+    "acn": "590298462",
+    "registrationDate": "2002-01-04",
+    "status": "Current",
+    "headOfficeState": "ACT",
+    "headOfficePostcode": "2601",
+    "adviserCount": 314,
+    "practiceCount": 129,
+    "channel": "Aligned",
+    "fum": 31501,
+    "revenueEstimate": 488,
+    "tier": "Top 20",
+    "products": [
+      "Managed investment schemes - Investor directed portfolio services",
+      "Standard margin lending facility",
+      "Superannuation"
+    ],
+    "website": "https://www.nationalaustraliaban.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 326
+      },
+      {
+        "date": "2019-06-30",
+        "count": 333
+      },
+      {
+        "date": "2020-06-30",
+        "count": 323
+      },
+      {
+        "date": "2021-06-30",
+        "count": 333
+      },
+      {
+        "date": "2022-06-30",
+        "count": 318
+      },
+      {
+        "date": "2023-06-30",
+        "count": 328
+      },
+      {
+        "date": "2024-06-30",
+        "count": 314
+      }
+    ],
+    "description": "National Australia Bank Limited is part of the NAB group and a top 20 Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_013",
+    "afslNumber": "231138",
+    "name": "Commonwealth Financial Planning Limited",
+    "tradingName": "CBA Financial Planning",
+    "parentGroup": "CBA",
+    "abn": "98003891539",
+    "acn": "884420889",
+    "registrationDate": "2014-12-12",
+    "status": "Current",
+    "headOfficeState": "NSW",
+    "headOfficePostcode": "2800",
+    "adviserCount": 356,
+    "practiceCount": 136,
+    "channel": "Aligned",
+    "fum": 62674,
+    "revenueEstimate": 759,
+    "tier": "Top 20",
+    "products": [
+      "Government debentures, stocks or bonds",
+      "Managed investment schemes - Other",
+      "Securities",
+      "Standard margin lending facility",
+      "Retirement savings accounts",
+      "Derivatives",
+      "Life products - Investment life insurance",
+      "Foreign exchange contracts"
+    ],
+    "website": "https://www.commonwealthfinancia.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 335
+      },
+      {
+        "date": "2019-06-30",
+        "count": 343
+      },
+      {
+        "date": "2020-06-30",
+        "count": 349
+      },
+      {
+        "date": "2021-06-30",
+        "count": 358
+      },
+      {
+        "date": "2022-06-30",
+        "count": 361
+      },
+      {
+        "date": "2023-06-30",
+        "count": 361
+      },
+      {
+        "date": "2024-06-30",
+        "count": 356
+      }
+    ],
+    "description": "Commonwealth Financial Planning Limited is part of the CBA group and a top 20 Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_014",
+    "afslNumber": "234527",
+    "name": "ANZ Financial Planning",
+    "tradingName": "ANZ Financial Planning",
+    "parentGroup": "ANZ",
+    "abn": "10767210353",
+    "acn": "493573689",
+    "registrationDate": "2001-05-09",
+    "status": "Current",
+    "headOfficeState": "NSW",
+    "headOfficePostcode": "2250",
+    "adviserCount": 264,
+    "practiceCount": 79,
+    "channel": "Aligned",
+    "fum": 41909,
+    "revenueEstimate": 243,
+    "tier": "Top 20",
+    "products": [
+      "Derivatives",
+      "Standard margin lending facility",
+      "Government debentures, stocks or bonds",
+      "Life products - Life risk insurance",
+      "Superannuation"
+    ],
+    "website": "https://www.anzfinancialplanning.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 259
+      },
+      {
+        "date": "2019-06-30",
+        "count": 257
+      },
+      {
+        "date": "2020-06-30",
+        "count": 264
+      },
+      {
+        "date": "2021-06-30",
+        "count": 263
+      },
+      {
+        "date": "2022-06-30",
+        "count": 262
+      },
+      {
+        "date": "2023-06-30",
+        "count": 269
+      },
+      {
+        "date": "2024-06-30",
+        "count": 264
+      }
+    ],
+    "description": "ANZ Financial Planning is part of the ANZ group and a top 20 Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_015",
+    "afslNumber": "233714",
+    "name": "Westpac Banking Corporation",
+    "tradingName": "Westpac Financial Planning",
+    "parentGroup": "Westpac",
+    "abn": "11012101423",
+    "acn": "560760890",
+    "registrationDate": "2003-06-07",
+    "status": "Current",
+    "headOfficeState": "NSW",
+    "headOfficePostcode": "2150",
+    "adviserCount": 99,
+    "practiceCount": 32,
+    "channel": "Aligned",
+    "fum": 61120,
+    "revenueEstimate": 188,
+    "tier": "Top 20",
+    "products": [
+      "Government debentures, stocks or bonds",
+      "Managed investment schemes - Investor directed portfolio services",
+      "Life products - Life risk insurance",
+      "Life products - Investment life insurance"
+    ],
+    "website": "https://www.westpacbankingcorpor.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 109
+      },
+      {
+        "date": "2019-06-30",
+        "count": 110
+      },
+      {
+        "date": "2020-06-30",
+        "count": 99
+      },
+      {
+        "date": "2021-06-30",
+        "count": 92
+      },
+      {
+        "date": "2022-06-30",
+        "count": 100
+      },
+      {
+        "date": "2023-06-30",
+        "count": 97
+      },
+      {
+        "date": "2024-06-30",
+        "count": 99
+      }
+    ],
+    "description": "Westpac Banking Corporation is part of the Westpac group and a top 20 Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_016",
+    "afslNumber": "237121",
+    "name": "Ord Minnett Limited",
+    "tradingName": "Ord Minnett Financial Planning",
+    "parentGroup": "Ord Minnett",
+    "abn": "23032318567",
+    "acn": "405574123",
+    "registrationDate": "2009-05-02",
+    "status": "Current",
+    "headOfficeState": "QLD",
+    "headOfficePostcode": "4000",
+    "adviserCount": 42,
+    "practiceCount": 16,
+    "channel": "Aligned",
+    "fum": 2102,
+    "revenueEstimate": 50,
+    "tier": "Mid-tier",
+    "products": [
+      "Managed investment schemes - Other",
+      "Securities",
+      "Superannuation",
+      "Standard margin lending facility",
+      "Derivatives",
+      "Foreign exchange contracts"
+    ],
+    "website": "https://www.ordminnettlimited.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 74
+      },
+      {
+        "date": "2019-06-30",
+        "count": 72
+      },
+      {
+        "date": "2020-06-30",
+        "count": 70
+      },
+      {
+        "date": "2021-06-30",
+        "count": 57
+      },
+      {
+        "date": "2022-06-30",
+        "count": 53
+      },
+      {
+        "date": "2023-06-30",
+        "count": 51
+      },
+      {
+        "date": "2024-06-30",
+        "count": 42
+      }
+    ],
+    "description": "Ord Minnett Limited is part of the Ord Minnett group and a mid-tier Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_017",
+    "afslNumber": "307–248",
+    "name": "Evans and Partners Pty Ltd",
+    "tradingName": "Evans & Partners Financial Planning",
+    "parentGroup": "Evans & Partners",
+    "abn": "21695527134",
+    "acn": "521625145",
+    "registrationDate": "1999-10-30",
+    "status": "Current",
+    "headOfficeState": "NSW",
+    "headOfficePostcode": "2640",
+    "adviserCount": 58,
+    "practiceCount": 27,
+    "channel": "Aligned",
+    "fum": 1105,
+    "revenueEstimate": 7,
+    "tier": "Mid-tier",
+    "products": [
+      "Life products - Life risk insurance",
+      "Securities",
+      "Life products - Investment life insurance",
+      "Standard margin lending facility",
+      "Managed investment schemes - Investor directed portfolio services",
+      "Foreign exchange contracts",
+      "Retirement savings accounts",
+      "Government debentures, stocks or bonds"
+    ],
+    "website": "https://www.evansandpartnersptyl.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 43
+      },
+      {
+        "date": "2019-06-30",
+        "count": 53
+      },
+      {
+        "date": "2020-06-30",
+        "count": 40
+      },
+      {
+        "date": "2021-06-30",
+        "count": 35
+      },
+      {
+        "date": "2022-06-30",
+        "count": 45
+      },
+      {
+        "date": "2023-06-30",
+        "count": 52
+      },
+      {
+        "date": "2024-06-30",
+        "count": 58
+      }
+    ],
+    "description": "Evans and Partners Pty Ltd is part of the Evans & Partners group and a mid-tier Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_018",
+    "afslNumber": "231143",
+    "name": "Dixon Advisory and Superannuation Services",
+    "tradingName": "E&P Financial Group Financial Planning",
+    "parentGroup": "E&P Financial Group",
+    "abn": "17211865383",
+    "acn": "843437528",
+    "registrationDate": "2005-02-21",
+    "status": "Current",
+    "headOfficeState": "SA",
+    "headOfficePostcode": "5061",
+    "adviserCount": 44,
+    "practiceCount": 17,
+    "channel": "Direct",
+    "fum": 4580,
+    "revenueEstimate": 33,
+    "tier": "Mid-tier",
+    "products": [
+      "Government debentures, stocks or bonds",
+      "Managed investment schemes - Investor directed portfolio services",
+      "Superannuation"
+    ],
+    "website": "https://www.dixonadvisoryandsupe.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 51
+      },
+      {
+        "date": "2019-06-30",
+        "count": 60
+      },
+      {
+        "date": "2020-06-30",
+        "count": 49
+      },
+      {
+        "date": "2021-06-30",
+        "count": 35
+      },
+      {
+        "date": "2022-06-30",
+        "count": 39
+      },
+      {
+        "date": "2023-06-30",
+        "count": 38
+      },
+      {
+        "date": "2024-06-30",
+        "count": 44
+      }
+    ],
+    "description": "Dixon Advisory and Superannuation Services is part of the E&P Financial Group group and a mid-tier Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_019",
+    "afslNumber": "342880",
+    "name": "Advice Evolution Pty Ltd",
+    "abn": "78381813712",
+    "acn": "776652319",
+    "registrationDate": "2008-05-02",
+    "status": "Current",
+    "headOfficeState": "WA",
+    "headOfficePostcode": "6151",
+    "adviserCount": 1,
+    "practiceCount": 1,
+    "channel": "Independent",
+    "fum": 258,
+    "revenueEstimate": 10,
+    "tier": "Boutique",
+    "products": [
+      "Managed investment schemes - Investor directed portfolio services",
+      "Life products - Life risk insurance",
+      "Managed investment schemes - Other"
+    ],
+    "website": "https://www.adviceevolutionptylt.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 15
+      },
+      {
+        "date": "2019-06-30",
+        "count": 3
+      },
+      {
+        "date": "2020-06-30",
+        "count": 1
+      },
+      {
+        "date": "2021-06-30",
+        "count": 1
+      },
+      {
+        "date": "2022-06-30",
+        "count": 5
+      },
+      {
+        "date": "2023-06-30",
+        "count": 1
+      },
+      {
+        "date": "2024-06-30",
+        "count": 1
+      }
+    ],
+    "description": "Advice Evolution Pty Ltd is a boutique Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_020",
+    "afslNumber": "514009",
+    "name": "Nexus Private Wealth Management",
+    "abn": "99419819855",
+    "acn": "303803359",
+    "registrationDate": "2004-07-17",
+    "status": "Current",
+    "headOfficeState": "WA",
+    "headOfficePostcode": "6230",
+    "adviserCount": 5,
+    "practiceCount": 2,
+    "channel": "Independent",
+    "fum": 382,
+    "revenueEstimate": 5,
+    "tier": "Boutique",
+    "products": [
+      "Life products - Investment life insurance",
+      "Standard margin lending facility",
+      "Derivatives",
+      "Life products - Life risk insurance"
+    ],
+    "website": "https://www.nexusprivatewealthma.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 15
+      },
+      {
+        "date": "2019-06-30",
+        "count": 18
+      },
+      {
+        "date": "2020-06-30",
+        "count": 6
+      },
+      {
+        "date": "2021-06-30",
+        "count": 5
+      },
+      {
+        "date": "2022-06-30",
+        "count": 5
+      },
+      {
+        "date": "2023-06-30",
+        "count": 1
+      },
+      {
+        "date": "2024-06-30",
+        "count": 5
+      }
+    ],
+    "description": "Nexus Private Wealth Management is a boutique Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_021",
+    "afslNumber": "485137",
+    "name": "Blue Chip Private Wealth",
+    "abn": "95507282104",
+    "acn": "507454451",
+    "registrationDate": "2001-11-29",
+    "status": "Current",
+    "headOfficeState": "SA",
+    "headOfficePostcode": "5067",
+    "adviserCount": 1,
+    "practiceCount": 1,
+    "channel": "Independent",
+    "fum": 476,
+    "revenueEstimate": 4,
+    "tier": "Boutique",
+    "products": [
+      "Derivatives",
+      "Deposit products",
+      "Life products - Investment life insurance",
+      "Managed investment schemes - Other"
+    ],
+    "website": "https://www.bluechipprivatewealt.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 3
+      },
+      {
+        "date": "2019-06-30",
+        "count": 5
+      },
+      {
+        "date": "2020-06-30",
+        "count": 1
+      },
+      {
+        "date": "2021-06-30",
+        "count": 10
+      },
+      {
+        "date": "2022-06-30",
+        "count": 1
+      },
+      {
+        "date": "2023-06-30",
+        "count": 1
+      },
+      {
+        "date": "2024-06-30",
+        "count": 1
+      }
+    ],
+    "description": "Blue Chip Private Wealth is a boutique Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_022",
+    "afslNumber": "308498",
+    "name": "Lighthouse Financial Group",
+    "abn": "02788362280",
+    "acn": "020154883",
+    "registrationDate": "2003-02-25",
+    "status": "Current",
+    "headOfficeState": "QLD",
+    "headOfficePostcode": "4000",
+    "adviserCount": 1,
+    "practiceCount": 1,
+    "channel": "Aligned",
+    "fum": 316,
+    "revenueEstimate": 3,
+    "tier": "Boutique",
+    "products": [
+      "Life products - Life risk insurance",
+      "Managed investment schemes - Other",
+      "Foreign exchange contracts",
+      "Superannuation",
+      "Managed investment schemes - Investor directed portfolio services",
+      "Life products - Investment life insurance"
+    ],
+    "website": "https://www.lighthousefinancialg.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 26
+      },
+      {
+        "date": "2019-06-30",
+        "count": 11
+      },
+      {
+        "date": "2020-06-30",
+        "count": 1
+      },
+      {
+        "date": "2021-06-30",
+        "count": 6
+      },
+      {
+        "date": "2022-06-30",
+        "count": 1
+      },
+      {
+        "date": "2023-06-30",
+        "count": 2
+      },
+      {
+        "date": "2024-06-30",
+        "count": 1
+      }
+    ],
+    "description": "Lighthouse Financial Group is a boutique Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_023",
+    "afslNumber": "476346",
+    "name": "Pinnacle Wealth Advisers",
+    "abn": "89512091525",
+    "acn": "682019856",
+    "registrationDate": "2009-08-22",
+    "status": "Current",
+    "headOfficeState": "WA",
+    "headOfficePostcode": "6009",
+    "adviserCount": 1,
+    "practiceCount": 1,
+    "channel": "Institutional",
+    "fum": 462,
+    "revenueEstimate": 5,
+    "tier": "Boutique",
+    "products": [
+      "Standard margin lending facility",
+      "Superannuation",
+      "Derivatives",
+      "Deposit products",
+      "Managed investment schemes - Investor directed portfolio services"
+    ],
+    "website": "https://www.pinnaclewealthadvise.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 6
+      },
+      {
+        "date": "2019-06-30",
+        "count": 1
+      },
+      {
+        "date": "2020-06-30",
+        "count": 1
+      },
+      {
+        "date": "2021-06-30",
+        "count": 1
+      },
+      {
+        "date": "2022-06-30",
+        "count": 2
+      },
+      {
+        "date": "2023-06-30",
+        "count": 1
+      },
+      {
+        "date": "2024-06-30",
+        "count": 1
+      }
+    ],
+    "description": "Pinnacle Wealth Advisers is a boutique Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_024",
+    "afslNumber": "519277",
+    "name": "Summit Financial Group",
+    "abn": "20250453710",
+    "acn": "746428762",
+    "registrationDate": "2008-06-11",
+    "status": "Current",
+    "headOfficeState": "NSW",
+    "headOfficePostcode": "2232",
+    "adviserCount": 27,
+    "practiceCount": 12,
+    "channel": "Aligned",
+    "fum": 91,
+    "revenueEstimate": 10,
+    "tier": "Boutique",
+    "products": [
+      "Derivatives",
+      "Life products - Investment life insurance",
+      "Superannuation"
+    ],
+    "website": "https://www.summitfinancialgroup.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 24
+      },
+      {
+        "date": "2019-06-30",
+        "count": 16
+      },
+      {
+        "date": "2020-06-30",
+        "count": 15
+      },
+      {
+        "date": "2021-06-30",
+        "count": 12
+      },
+      {
+        "date": "2022-06-30",
+        "count": 14
+      },
+      {
+        "date": "2023-06-30",
+        "count": 23
+      },
+      {
+        "date": "2024-06-30",
+        "count": 27
+      }
+    ],
+    "description": "Summit Financial Group is a boutique Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_025",
+    "afslNumber": "488933",
+    "name": "Meridian Financial Planning",
+    "abn": "07915906299",
+    "acn": "948838052",
+    "registrationDate": "2000-12-05",
+    "status": "Current",
+    "headOfficeState": "WA",
+    "headOfficePostcode": "6160",
+    "adviserCount": 28,
+    "practiceCount": 17,
+    "channel": "Institutional",
+    "fum": 364,
+    "revenueEstimate": 4,
+    "tier": "Boutique",
+    "products": [
+      "Securities",
+      "Life products - Investment life insurance",
+      "Foreign exchange contracts",
+      "Managed investment schemes - Other",
+      "Life products - Life risk insurance",
+      "Government debentures, stocks or bonds",
+      "Deposit products"
+    ],
+    "website": "https://www.meridianfinancialpla.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 24
+      },
+      {
+        "date": "2019-06-30",
+        "count": 31
+      },
+      {
+        "date": "2020-06-30",
+        "count": 22
+      },
+      {
+        "date": "2021-06-30",
+        "count": 19
+      },
+      {
+        "date": "2022-06-30",
+        "count": 9
+      },
+      {
+        "date": "2023-06-30",
+        "count": 19
+      },
+      {
+        "date": "2024-06-30",
+        "count": 28
+      }
+    ],
+    "description": "Meridian Financial Planning is a boutique Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_026",
+    "afslNumber": "463820",
+    "name": "Heritage Financial Services",
+    "abn": "44689744721",
+    "acn": "322200943",
+    "registrationDate": "2009-11-15",
+    "status": "Current",
+    "headOfficeState": "NSW",
+    "headOfficePostcode": "2000",
+    "adviserCount": 46,
+    "practiceCount": 24,
+    "channel": "Institutional",
+    "fum": 478,
+    "revenueEstimate": 8,
+    "tier": "Boutique",
+    "products": [
+      "Standard margin lending facility",
+      "Securities",
+      "Life products - Life risk insurance"
+    ],
+    "website": "https://www.heritagefinancialser.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 26
+      },
+      {
+        "date": "2019-06-30",
+        "count": 24
+      },
+      {
+        "date": "2020-06-30",
+        "count": 33
+      },
+      {
+        "date": "2021-06-30",
+        "count": 38
+      },
+      {
+        "date": "2022-06-30",
+        "count": 48
+      },
+      {
+        "date": "2023-06-30",
+        "count": 42
+      },
+      {
+        "date": "2024-06-30",
+        "count": 46
+      }
+    ],
+    "description": "Heritage Financial Services is a boutique Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_027",
+    "afslNumber": "501234",
+    "name": "Coastal Wealth Management",
+    "abn": "21730989913",
+    "acn": "761822555",
+    "registrationDate": "2000-06-18",
+    "status": "Current",
+    "headOfficeState": "QLD",
+    "headOfficePostcode": "4006",
+    "adviserCount": 1,
+    "practiceCount": 1,
+    "channel": "Independent",
+    "fum": 169,
+    "revenueEstimate": 2,
+    "tier": "Self-licensed",
+    "products": [
+      "Derivatives",
+      "Foreign exchange contracts",
+      "Deposit products",
+      "Life products - Investment life insurance",
+      "Life products - Life risk insurance",
+      "Retirement savings accounts",
+      "Securities",
+      "Superannuation"
+    ],
+    "website": "https://www.coastalwealthmanagem.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 1
+      },
+      {
+        "date": "2019-06-30",
+        "count": 10
+      },
+      {
+        "date": "2020-06-30",
+        "count": 11
+      },
+      {
+        "date": "2021-06-30",
+        "count": 11
+      },
+      {
+        "date": "2022-06-30",
+        "count": 9
+      },
+      {
+        "date": "2023-06-30",
+        "count": 1
+      },
+      {
+        "date": "2024-06-30",
+        "count": 1
+      }
+    ],
+    "description": "Coastal Wealth Management is a self-licensed Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_028",
+    "afslNumber": "498765",
+    "name": "Capital Region Financial Advisers",
+    "abn": "83652876887",
+    "acn": "866671880",
+    "registrationDate": "2012-03-19",
+    "status": "Current",
+    "headOfficeState": "QLD",
+    "headOfficePostcode": "4032",
+    "adviserCount": 2,
+    "practiceCount": 1,
+    "channel": "Independent",
+    "fum": 201,
+    "revenueEstimate": 8,
+    "tier": "Self-licensed",
+    "products": [
+      "Life products - Life risk insurance",
+      "Superannuation",
+      "Securities"
+    ],
+    "website": "https://www.capitalregionfinanci.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 1
+      },
+      {
+        "date": "2019-06-30",
+        "count": 3
+      },
+      {
+        "date": "2020-06-30",
+        "count": 1
+      },
+      {
+        "date": "2021-06-30",
+        "count": 8
+      },
+      {
+        "date": "2022-06-30",
+        "count": 5
+      },
+      {
+        "date": "2023-06-30",
+        "count": 2
+      },
+      {
+        "date": "2024-06-30",
+        "count": 2
+      }
+    ],
+    "description": "Capital Region Financial Advisers is a self-licensed Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_029",
+    "afslNumber": "512398",
+    "name": "Regional Advice Partners",
+    "abn": "59369196037",
+    "acn": "053608997",
+    "registrationDate": "2001-01-30",
+    "status": "Current",
+    "headOfficeState": "NSW",
+    "headOfficePostcode": "2500",
+    "adviserCount": 5,
+    "practiceCount": 2,
+    "channel": "Independent",
+    "fum": 61,
+    "revenueEstimate": 1,
+    "tier": "Self-licensed",
+    "products": [
+      "Life products - Investment life insurance",
+      "Managed investment schemes - Investor directed portfolio services",
+      "Retirement savings accounts",
+      "Life products - Life risk insurance"
+    ],
+    "website": "https://www.regionaladvicepartne.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 2
+      },
+      {
+        "date": "2019-06-30",
+        "count": 1
+      },
+      {
+        "date": "2020-06-30",
+        "count": 2
+      },
+      {
+        "date": "2021-06-30",
+        "count": 1
+      },
+      {
+        "date": "2022-06-30",
+        "count": 6
+      },
+      {
+        "date": "2023-06-30",
+        "count": 1
+      },
+      {
+        "date": "2024-06-30",
+        "count": 5
+      }
+    ],
+    "description": "Regional Advice Partners is a self-licensed Australian Financial Services licensee providing financial planning and advice services."
+  },
+  {
+    "id": "lic_030",
+    "afslNumber": "487321",
+    "name": "Hunter Valley Wealth",
+    "abn": "62914946329",
+    "acn": "482206384",
+    "registrationDate": "2014-06-29",
+    "status": "Current",
+    "headOfficeState": "NT",
+    "headOfficePostcode": "0800",
+    "adviserCount": 3,
+    "practiceCount": 2,
+    "channel": "Independent",
+    "fum": 441,
+    "revenueEstimate": 8,
+    "tier": "Self-licensed",
+    "products": [
+      "Government debentures, stocks or bonds",
+      "Securities",
+      "Deposit products",
+      "Derivatives",
+      "Managed investment schemes - Investor directed portfolio services",
+      "Retirement savings accounts",
+      "Standard margin lending facility"
+    ],
+    "website": "https://www.huntervalleywealth.com.au",
+    "adviserCountHistory": [
+      {
+        "date": "2018-06-30",
+        "count": 1
+      },
+      {
+        "date": "2019-06-30",
+        "count": 1
+      },
+      {
+        "date": "2020-06-30",
+        "count": 6
+      },
+      {
+        "date": "2021-06-30",
+        "count": 9
+      },
+      {
+        "date": "2022-06-30",
+        "count": 1
+      },
+      {
+        "date": "2023-06-30",
+        "count": 1
+      },
+      {
+        "date": "2024-06-30",
+        "count": 3
+      }
+    ],
+    "description": "Hunter Valley Wealth is a self-licensed Australian Financial Services licensee providing financial planning and advice services."
+  }
+]

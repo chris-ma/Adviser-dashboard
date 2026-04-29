@@ -1,0 +1,1464 @@
+[
+  {
+    "regionCode": "101",
+    "regionName": "Capital Region",
+    "regionType": "sa4",
+    "adviserCount": 358,
+    "licenseeCount": 102,
+    "practiceCount": 156,
+    "population": 445538,
+    "advisersPerCapita": 8,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "102",
+    "regionName": "Central Coast",
+    "regionType": "sa4",
+    "adviserCount": 65,
+    "licenseeCount": 19,
+    "practiceCount": 28,
+    "population": 550501,
+    "advisersPerCapita": 1.2,
+    "whiteSpaceScore": 84,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -33.4258,
+      151.3423
+    ]
+  },
+  {
+    "regionCode": "103",
+    "regionName": "Central West",
+    "regionType": "sa4",
+    "adviserCount": 145,
+    "licenseeCount": 41,
+    "practiceCount": 63,
+    "population": 416926,
+    "advisersPerCapita": 3.5,
+    "whiteSpaceScore": 52,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -33.2839,
+      149.0994
+    ]
+  },
+  {
+    "regionCode": "104",
+    "regionName": "Coffs Harbour - Grafton",
+    "regionType": "sa4",
+    "adviserCount": 81,
+    "licenseeCount": 23,
+    "practiceCount": 35,
+    "population": 157238,
+    "advisersPerCapita": 5.2,
+    "whiteSpaceScore": 28,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "105",
+    "regionName": "Far West and Orana",
+    "regionType": "sa4",
+    "adviserCount": 60,
+    "licenseeCount": 17,
+    "practiceCount": 26,
+    "population": 386983,
+    "advisersPerCapita": 1.6,
+    "whiteSpaceScore": 78,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -32.2569,
+      148.6011
+    ]
+  },
+  {
+    "regionCode": "106",
+    "regionName": "Hunter Valley exc Newcastle",
+    "regionType": "sa4",
+    "adviserCount": 315,
+    "licenseeCount": 90,
+    "practiceCount": 137,
+    "population": 142505,
+    "advisersPerCapita": 22.1,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "107",
+    "regionName": "Illawarra",
+    "regionType": "sa4",
+    "adviserCount": 175,
+    "licenseeCount": 50,
+    "practiceCount": 76,
+    "population": 522404,
+    "advisersPerCapita": 3.3,
+    "whiteSpaceScore": 53,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -34.4244,
+      150.8939
+    ]
+  },
+  {
+    "regionCode": "108",
+    "regionName": "Mid North Coast",
+    "regionType": "sa4",
+    "adviserCount": 98,
+    "licenseeCount": 28,
+    "practiceCount": 43,
+    "population": 221277,
+    "advisersPerCapita": 4.4,
+    "whiteSpaceScore": 38,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "109",
+    "regionName": "Murray",
+    "regionType": "sa4",
+    "adviserCount": 230,
+    "licenseeCount": 66,
+    "practiceCount": 100,
+    "population": 518050,
+    "advisersPerCapita": 4.4,
+    "whiteSpaceScore": 38,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -36.0737,
+      146.9135
+    ]
+  },
+  {
+    "regionCode": "110",
+    "regionName": "New England and North West",
+    "regionType": "sa4",
+    "adviserCount": 161,
+    "licenseeCount": 46,
+    "practiceCount": 70,
+    "population": 591499,
+    "advisersPerCapita": 2.7,
+    "whiteSpaceScore": 62,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -31.0831,
+      150.9174
+    ]
+  },
+  {
+    "regionCode": "111",
+    "regionName": "Newcastle and Lake Macquarie",
+    "regionType": "sa4",
+    "adviserCount": 202,
+    "licenseeCount": 58,
+    "practiceCount": 88,
+    "population": 301859,
+    "advisersPerCapita": 6.7,
+    "whiteSpaceScore": 7,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -32.9267,
+      151.7789
+    ]
+  },
+  {
+    "regionCode": "112",
+    "regionName": "Richmond - Tweed",
+    "regionType": "sa4",
+    "adviserCount": 106,
+    "licenseeCount": 30,
+    "practiceCount": 46,
+    "population": 441180,
+    "advisersPerCapita": 2.4,
+    "whiteSpaceScore": 67,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "113",
+    "regionName": "Riverina",
+    "regionType": "sa4",
+    "adviserCount": 156,
+    "licenseeCount": 45,
+    "practiceCount": 68,
+    "population": 416834,
+    "advisersPerCapita": 3.7,
+    "whiteSpaceScore": 48,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -35.1082,
+      147.3598
+    ]
+  },
+  {
+    "regionCode": "114",
+    "regionName": "Southern Highlands and Shoalhaven",
+    "regionType": "sa4",
+    "adviserCount": 148,
+    "licenseeCount": 42,
+    "practiceCount": 64,
+    "population": 302534,
+    "advisersPerCapita": 4.9,
+    "whiteSpaceScore": 32,
+    "metroOrRegional": "Regional",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "115",
+    "regionName": "Sydney - Baulkham Hills and Hawkesbury",
+    "regionType": "sa4",
+    "adviserCount": 408,
+    "licenseeCount": 117,
+    "practiceCount": 177,
+    "population": 469024,
+    "advisersPerCapita": 8.7,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "116",
+    "regionName": "Sydney - Blacktown",
+    "regionType": "sa4",
+    "adviserCount": 120,
+    "licenseeCount": 34,
+    "practiceCount": 52,
+    "population": 406799,
+    "advisersPerCapita": 2.9,
+    "whiteSpaceScore": 59,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "117",
+    "regionName": "Sydney - City and Inner South",
+    "regionType": "sa4",
+    "adviserCount": 314,
+    "licenseeCount": 90,
+    "practiceCount": 137,
+    "population": 161527,
+    "advisersPerCapita": 19.4,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "118",
+    "regionName": "Sydney - Eastern Suburbs",
+    "regionType": "sa4",
+    "adviserCount": 247,
+    "licenseeCount": 71,
+    "practiceCount": 107,
+    "population": 242203,
+    "advisersPerCapita": 10.2,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.8934,
+      151.2547
+    ]
+  },
+  {
+    "regionCode": "119",
+    "regionName": "Sydney - Inner South West",
+    "regionType": "sa4",
+    "adviserCount": 248,
+    "licenseeCount": 71,
+    "practiceCount": 108,
+    "population": 487125,
+    "advisersPerCapita": 5.1,
+    "whiteSpaceScore": 29,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "120",
+    "regionName": "Sydney - Inner West",
+    "regionType": "sa4",
+    "adviserCount": 121,
+    "licenseeCount": 35,
+    "practiceCount": 53,
+    "population": 177053,
+    "advisersPerCapita": 6.8,
+    "whiteSpaceScore": 5,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "121",
+    "regionName": "Sydney - North Sydney and Hornsby",
+    "regionType": "sa4",
+    "adviserCount": 167,
+    "licenseeCount": 48,
+    "practiceCount": 73,
+    "population": 570222,
+    "advisersPerCapita": 2.9,
+    "whiteSpaceScore": 59,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.8401,
+      151.2066
+    ]
+  },
+  {
+    "regionCode": "122",
+    "regionName": "Sydney - Northern Beaches",
+    "regionType": "sa4",
+    "adviserCount": 363,
+    "licenseeCount": 104,
+    "practiceCount": 158,
+    "population": 127799,
+    "advisersPerCapita": 28.4,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "123",
+    "regionName": "Sydney - Outer South West",
+    "regionType": "sa4",
+    "adviserCount": 221,
+    "licenseeCount": 63,
+    "practiceCount": 96,
+    "population": 240652,
+    "advisersPerCapita": 9.2,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "124",
+    "regionName": "Sydney - Outer West and Blue Mountains",
+    "regionType": "sa4",
+    "adviserCount": 318,
+    "licenseeCount": 91,
+    "practiceCount": 138,
+    "population": 336407,
+    "advisersPerCapita": 9.5,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.7514,
+      150.6942
+    ]
+  },
+  {
+    "regionCode": "125",
+    "regionName": "Sydney - Parramatta",
+    "regionType": "sa4",
+    "adviserCount": 452,
+    "licenseeCount": 129,
+    "practiceCount": 197,
+    "population": 222430,
+    "advisersPerCapita": 20.3,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.815,
+      151.0011
+    ]
+  },
+  {
+    "regionCode": "126",
+    "regionName": "Sydney - Ryde",
+    "regionType": "sa4",
+    "adviserCount": 298,
+    "licenseeCount": 85,
+    "practiceCount": 130,
+    "population": 450671,
+    "advisersPerCapita": 6.6,
+    "whiteSpaceScore": 8,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.8156,
+      151.1004
+    ]
+  },
+  {
+    "regionCode": "127",
+    "regionName": "Sydney - South West",
+    "regionType": "sa4",
+    "adviserCount": 395,
+    "licenseeCount": 113,
+    "practiceCount": 172,
+    "population": 311592,
+    "advisersPerCapita": 12.7,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -33.9208,
+      150.9232
+    ]
+  },
+  {
+    "regionCode": "128",
+    "regionName": "Sydney - Sutherland",
+    "regionType": "sa4",
+    "adviserCount": 338,
+    "licenseeCount": 97,
+    "practiceCount": 147,
+    "population": 262376,
+    "advisersPerCapita": 12.9,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "NSW",
+    "coordinates": [
+      -34.0306,
+      151.0567
+    ]
+  },
+  {
+    "regionCode": "201",
+    "regionName": "Ballarat",
+    "regionType": "sa4",
+    "adviserCount": 317,
+    "licenseeCount": 91,
+    "practiceCount": 138,
+    "population": 711637,
+    "advisersPerCapita": 4.5,
+    "whiteSpaceScore": 38,
+    "metroOrRegional": "Regional",
+    "state": "VIC",
+    "coordinates": [
+      -37.5622,
+      143.8503
+    ]
+  },
+  {
+    "regionCode": "202",
+    "regionName": "Bendigo",
+    "regionType": "sa4",
+    "adviserCount": 602,
+    "licenseeCount": 172,
+    "practiceCount": 262,
+    "population": 601807,
+    "advisersPerCapita": 10,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "VIC",
+    "coordinates": [
+      -36.757,
+      144.2794
+    ]
+  },
+  {
+    "regionCode": "203",
+    "regionName": "Geelong",
+    "regionType": "sa4",
+    "adviserCount": 283,
+    "licenseeCount": 81,
+    "practiceCount": 123,
+    "population": 664695,
+    "advisersPerCapita": 4.3,
+    "whiteSpaceScore": 41,
+    "metroOrRegional": "Regional",
+    "state": "VIC",
+    "coordinates": [
+      -38.1499,
+      144.3617
+    ]
+  },
+  {
+    "regionCode": "204",
+    "regionName": "Hume",
+    "regionType": "sa4",
+    "adviserCount": 90,
+    "licenseeCount": 26,
+    "practiceCount": 39,
+    "population": 219117,
+    "advisersPerCapita": 4.1,
+    "whiteSpaceScore": 43,
+    "metroOrRegional": "Regional",
+    "state": "VIC",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "205",
+    "regionName": "Latrobe - Gippsland",
+    "regionType": "sa4",
+    "adviserCount": 442,
+    "licenseeCount": 126,
+    "practiceCount": 192,
+    "population": 336211,
+    "advisersPerCapita": 13.1,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "VIC",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "206",
+    "regionName": "Melbourne - Inner",
+    "regionType": "sa4",
+    "adviserCount": 602,
+    "licenseeCount": 172,
+    "practiceCount": 262,
+    "population": 426165,
+    "advisersPerCapita": 14.1,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "VIC",
+    "coordinates": [
+      -37.8136,
+      144.9631
+    ]
+  },
+  {
+    "regionCode": "207",
+    "regionName": "Melbourne - Inner East",
+    "regionType": "sa4",
+    "adviserCount": 313,
+    "licenseeCount": 89,
+    "practiceCount": 136,
+    "population": 576501,
+    "advisersPerCapita": 5.4,
+    "whiteSpaceScore": 25,
+    "metroOrRegional": "Metro",
+    "state": "VIC",
+    "coordinates": [
+      -37.8232,
+      145.0016
+    ]
+  },
+  {
+    "regionCode": "208",
+    "regionName": "Melbourne - Inner South",
+    "regionType": "sa4",
+    "adviserCount": 501,
+    "licenseeCount": 143,
+    "practiceCount": 218,
+    "population": 450700,
+    "advisersPerCapita": 11.1,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "VIC",
+    "coordinates": [
+      -37.8597,
+      144.9817
+    ]
+  },
+  {
+    "regionCode": "209",
+    "regionName": "Melbourne - North East",
+    "regionType": "sa4",
+    "adviserCount": 194,
+    "licenseeCount": 55,
+    "practiceCount": 84,
+    "population": 635655,
+    "advisersPerCapita": 3.1,
+    "whiteSpaceScore": 58,
+    "metroOrRegional": "Metro",
+    "state": "VIC",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "210",
+    "regionName": "Melbourne - North West",
+    "regionType": "sa4",
+    "adviserCount": 253,
+    "licenseeCount": 72,
+    "practiceCount": 110,
+    "population": 264069,
+    "advisersPerCapita": 9.6,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "VIC",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "211",
+    "regionName": "Melbourne - Outer East",
+    "regionType": "sa4",
+    "adviserCount": 425,
+    "licenseeCount": 121,
+    "practiceCount": 185,
+    "population": 211482,
+    "advisersPerCapita": 20.1,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "VIC",
+    "coordinates": [
+      -37.8413,
+      145.0618
+    ]
+  },
+  {
+    "regionCode": "212",
+    "regionName": "Melbourne - South East",
+    "regionType": "sa4",
+    "adviserCount": 613,
+    "licenseeCount": 175,
+    "practiceCount": 267,
+    "population": 548124,
+    "advisersPerCapita": 11.2,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "VIC",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "213",
+    "regionName": "Melbourne - West",
+    "regionType": "sa4",
+    "adviserCount": 621,
+    "licenseeCount": 177,
+    "practiceCount": 270,
+    "population": 365807,
+    "advisersPerCapita": 17,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "VIC",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "214",
+    "regionName": "Mornington Peninsula",
+    "regionType": "sa4",
+    "adviserCount": 613,
+    "licenseeCount": 175,
+    "practiceCount": 267,
+    "population": 245714,
+    "advisersPerCapita": 24.9,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "VIC",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "215",
+    "regionName": "North West",
+    "regionType": "sa4",
+    "adviserCount": 98,
+    "licenseeCount": 28,
+    "practiceCount": 43,
+    "population": 175783,
+    "advisersPerCapita": 5.6,
+    "whiteSpaceScore": 23,
+    "metroOrRegional": "Regional",
+    "state": "VIC",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "216",
+    "regionName": "Shepparton",
+    "regionType": "sa4",
+    "adviserCount": 333,
+    "licenseeCount": 95,
+    "practiceCount": 145,
+    "population": 206854,
+    "advisersPerCapita": 16.1,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "VIC",
+    "coordinates": [
+      -36.3804,
+      145.399
+    ]
+  },
+  {
+    "regionCode": "217",
+    "regionName": "Warrnambool and South West",
+    "regionType": "sa4",
+    "adviserCount": 359,
+    "licenseeCount": 103,
+    "practiceCount": 156,
+    "population": 358730,
+    "advisersPerCapita": 10,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "VIC",
+    "coordinates": [
+      -38.3836,
+      142.4882
+    ]
+  },
+  {
+    "regionCode": "301",
+    "regionName": "Brisbane - East",
+    "regionType": "sa4",
+    "adviserCount": 165,
+    "licenseeCount": 47,
+    "practiceCount": 72,
+    "population": 432964,
+    "advisersPerCapita": 3.8,
+    "whiteSpaceScore": 47,
+    "metroOrRegional": "Metro",
+    "state": "QLD",
+    "coordinates": [
+      -27.4564,
+      153.0338
+    ]
+  },
+  {
+    "regionCode": "302",
+    "regionName": "Brisbane - North",
+    "regionType": "sa4",
+    "adviserCount": 104,
+    "licenseeCount": 30,
+    "practiceCount": 45,
+    "population": 496982,
+    "advisersPerCapita": 2.1,
+    "whiteSpaceScore": 71,
+    "metroOrRegional": "Metro",
+    "state": "QLD",
+    "coordinates": [
+      -27.387,
+      153.0337
+    ]
+  },
+  {
+    "regionCode": "303",
+    "regionName": "Brisbane - South",
+    "regionType": "sa4",
+    "adviserCount": 250,
+    "licenseeCount": 71,
+    "practiceCount": 109,
+    "population": 569528,
+    "advisersPerCapita": 4.4,
+    "whiteSpaceScore": 39,
+    "metroOrRegional": "Metro",
+    "state": "QLD",
+    "coordinates": [
+      -27.4748,
+      153.0159
+    ]
+  },
+  {
+    "regionCode": "304",
+    "regionName": "Brisbane - West",
+    "regionType": "sa4",
+    "adviserCount": 175,
+    "licenseeCount": 50,
+    "practiceCount": 76,
+    "population": 602661,
+    "advisersPerCapita": 2.9,
+    "whiteSpaceScore": 60,
+    "metroOrRegional": "Metro",
+    "state": "QLD",
+    "coordinates": [
+      -27.4841,
+      152.9996
+    ]
+  },
+  {
+    "regionCode": "305",
+    "regionName": "Brisbane Inner City",
+    "regionType": "sa4",
+    "adviserCount": 248,
+    "licenseeCount": 71,
+    "practiceCount": 108,
+    "population": 598108,
+    "advisersPerCapita": 4.1,
+    "whiteSpaceScore": 42,
+    "metroOrRegional": "Metro",
+    "state": "QLD",
+    "coordinates": [
+      -27.4698,
+      153.0251
+    ]
+  },
+  {
+    "regionCode": "306",
+    "regionName": "Cairns",
+    "regionType": "sa4",
+    "adviserCount": 57,
+    "licenseeCount": 16,
+    "practiceCount": 25,
+    "population": 478122,
+    "advisersPerCapita": 1.2,
+    "whiteSpaceScore": 83,
+    "metroOrRegional": "Regional",
+    "state": "QLD",
+    "coordinates": [
+      -16.9186,
+      145.7781
+    ]
+  },
+  {
+    "regionCode": "307",
+    "regionName": "Darling Downs - Maranoa",
+    "regionType": "sa4",
+    "adviserCount": 332,
+    "licenseeCount": 95,
+    "practiceCount": 144,
+    "population": 148218,
+    "advisersPerCapita": 22.4,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "QLD",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "308",
+    "regionName": "Fitzroy",
+    "regionType": "sa4",
+    "adviserCount": 249,
+    "licenseeCount": 71,
+    "practiceCount": 108,
+    "population": 514283,
+    "advisersPerCapita": 4.8,
+    "whiteSpaceScore": 33,
+    "metroOrRegional": "Regional",
+    "state": "QLD",
+    "coordinates": [
+      -23.3791,
+      150.51
+    ]
+  },
+  {
+    "regionCode": "309",
+    "regionName": "Gold Coast",
+    "regionType": "sa4",
+    "adviserCount": 243,
+    "licenseeCount": 69,
+    "practiceCount": 106,
+    "population": 153420,
+    "advisersPerCapita": 15.8,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "QLD",
+    "coordinates": [
+      -28.0017,
+      153.4311
+    ]
+  },
+  {
+    "regionCode": "310",
+    "regionName": "Ipswich",
+    "regionType": "sa4",
+    "adviserCount": 289,
+    "licenseeCount": 83,
+    "practiceCount": 126,
+    "population": 151847,
+    "advisersPerCapita": 19,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "QLD",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "311",
+    "regionName": "Logan - Beaudesert",
+    "regionType": "sa4",
+    "adviserCount": 332,
+    "licenseeCount": 95,
+    "practiceCount": 144,
+    "population": 143261,
+    "advisersPerCapita": 23.2,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "QLD",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "312",
+    "regionName": "Mackay - Isaac - Whitsunday",
+    "regionType": "sa4",
+    "adviserCount": 95,
+    "licenseeCount": 27,
+    "practiceCount": 41,
+    "population": 256719,
+    "advisersPerCapita": 3.7,
+    "whiteSpaceScore": 49,
+    "metroOrRegional": "Regional",
+    "state": "QLD",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "313",
+    "regionName": "Moreton Bay - North",
+    "regionType": "sa4",
+    "adviserCount": 268,
+    "licenseeCount": 77,
+    "practiceCount": 117,
+    "population": 599553,
+    "advisersPerCapita": 4.5,
+    "whiteSpaceScore": 38,
+    "metroOrRegional": "Metro",
+    "state": "QLD",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "314",
+    "regionName": "Moreton Bay - South",
+    "regionType": "sa4",
+    "adviserCount": 89,
+    "licenseeCount": 25,
+    "practiceCount": 39,
+    "population": 191990,
+    "advisersPerCapita": 4.6,
+    "whiteSpaceScore": 36,
+    "metroOrRegional": "Metro",
+    "state": "QLD",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "315",
+    "regionName": "Sunshine Coast",
+    "regionType": "sa4",
+    "adviserCount": 176,
+    "licenseeCount": 50,
+    "practiceCount": 77,
+    "population": 531040,
+    "advisersPerCapita": 3.3,
+    "whiteSpaceScore": 54,
+    "metroOrRegional": "Regional",
+    "state": "QLD",
+    "coordinates": [
+      -26.6516,
+      153.0683
+    ]
+  },
+  {
+    "regionCode": "316",
+    "regionName": "Toowoomba",
+    "regionType": "sa4",
+    "adviserCount": 210,
+    "licenseeCount": 60,
+    "practiceCount": 91,
+    "population": 279454,
+    "advisersPerCapita": 7.5,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "QLD",
+    "coordinates": [
+      -27.5598,
+      151.9507
+    ]
+  },
+  {
+    "regionCode": "317",
+    "regionName": "Townsville",
+    "regionType": "sa4",
+    "adviserCount": 243,
+    "licenseeCount": 69,
+    "practiceCount": 106,
+    "population": 249589,
+    "advisersPerCapita": 9.7,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "QLD",
+    "coordinates": [
+      -19.259,
+      146.8169
+    ]
+  },
+  {
+    "regionCode": "318",
+    "regionName": "Wide Bay",
+    "regionType": "sa4",
+    "adviserCount": 187,
+    "licenseeCount": 53,
+    "practiceCount": 81,
+    "population": 284829,
+    "advisersPerCapita": 6.6,
+    "whiteSpaceScore": 9,
+    "metroOrRegional": "Regional",
+    "state": "QLD",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "401",
+    "regionName": "Bunbury",
+    "regionType": "sa4",
+    "adviserCount": 401,
+    "licenseeCount": 115,
+    "practiceCount": 174,
+    "population": 584518,
+    "advisersPerCapita": 6.9,
+    "whiteSpaceScore": 5,
+    "metroOrRegional": "Regional",
+    "state": "WA",
+    "coordinates": [
+      -33.3271,
+      115.6414
+    ]
+  },
+  {
+    "regionCode": "402",
+    "regionName": "Mandurah",
+    "regionType": "sa4",
+    "adviserCount": 382,
+    "licenseeCount": 109,
+    "practiceCount": 166,
+    "population": 343010,
+    "advisersPerCapita": 11.1,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "WA",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "403",
+    "regionName": "Perth - Inner",
+    "regionType": "sa4",
+    "adviserCount": 273,
+    "licenseeCount": 78,
+    "practiceCount": 119,
+    "population": 186703,
+    "advisersPerCapita": 14.6,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "WA",
+    "coordinates": [
+      -31.9505,
+      115.8605
+    ]
+  },
+  {
+    "regionCode": "404",
+    "regionName": "Perth - North East",
+    "regionType": "sa4",
+    "adviserCount": 377,
+    "licenseeCount": 108,
+    "practiceCount": 164,
+    "population": 421357,
+    "advisersPerCapita": 8.9,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "WA",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "405",
+    "regionName": "Perth - North West",
+    "regionType": "sa4",
+    "adviserCount": 443,
+    "licenseeCount": 127,
+    "practiceCount": 193,
+    "population": 224304,
+    "advisersPerCapita": 19.7,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "WA",
+    "coordinates": [
+      -31.949,
+      115.8263
+    ]
+  },
+  {
+    "regionCode": "406",
+    "regionName": "Perth - South East",
+    "regionType": "sa4",
+    "adviserCount": 382,
+    "licenseeCount": 109,
+    "practiceCount": 166,
+    "population": 465259,
+    "advisersPerCapita": 8.2,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "WA",
+    "coordinates": [
+      -31.9799,
+      115.8614
+    ]
+  },
+  {
+    "regionCode": "407",
+    "regionName": "Perth - South West",
+    "regionType": "sa4",
+    "adviserCount": 171,
+    "licenseeCount": 49,
+    "practiceCount": 74,
+    "population": 456651,
+    "advisersPerCapita": 3.7,
+    "whiteSpaceScore": 48,
+    "metroOrRegional": "Metro",
+    "state": "WA",
+    "coordinates": [
+      -32.0569,
+      115.7439
+    ]
+  },
+  {
+    "regionCode": "408",
+    "regionName": "Western Australia - Outback (North)",
+    "regionType": "sa4",
+    "adviserCount": 452,
+    "licenseeCount": 129,
+    "practiceCount": 197,
+    "population": 581621,
+    "advisersPerCapita": 7.8,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "WA",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "409",
+    "regionName": "Western Australia - Outback (South)",
+    "regionType": "sa4",
+    "adviserCount": 365,
+    "licenseeCount": 104,
+    "practiceCount": 159,
+    "population": 148374,
+    "advisersPerCapita": 24.6,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "WA",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "501",
+    "regionName": "Adelaide - Central and Hills",
+    "regionType": "sa4",
+    "adviserCount": 301,
+    "licenseeCount": 86,
+    "practiceCount": 131,
+    "population": 373486,
+    "advisersPerCapita": 8.1,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "SA",
+    "coordinates": [
+      -34.9285,
+      138.6007
+    ]
+  },
+  {
+    "regionCode": "502",
+    "regionName": "Adelaide - North",
+    "regionType": "sa4",
+    "adviserCount": 134,
+    "licenseeCount": 38,
+    "practiceCount": 58,
+    "population": 179897,
+    "advisersPerCapita": 7.4,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "SA",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "503",
+    "regionName": "Adelaide - South",
+    "regionType": "sa4",
+    "adviserCount": 75,
+    "licenseeCount": 21,
+    "practiceCount": 33,
+    "population": 123526,
+    "advisersPerCapita": 6.1,
+    "whiteSpaceScore": 16,
+    "metroOrRegional": "Metro",
+    "state": "SA",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "504",
+    "regionName": "Adelaide - West",
+    "regionType": "sa4",
+    "adviserCount": 266,
+    "licenseeCount": 76,
+    "practiceCount": 116,
+    "population": 199890,
+    "advisersPerCapita": 13.3,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "SA",
+    "coordinates": [
+      -34.9502,
+      138.598
+    ]
+  },
+  {
+    "regionCode": "505",
+    "regionName": "Barossa - Yorke - Mid North",
+    "regionType": "sa4",
+    "adviserCount": 48,
+    "licenseeCount": 14,
+    "practiceCount": 21,
+    "population": 266306,
+    "advisersPerCapita": 1.8,
+    "whiteSpaceScore": 75,
+    "metroOrRegional": "Regional",
+    "state": "SA",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "506",
+    "regionName": "South Australia - Outback",
+    "regionType": "sa4",
+    "adviserCount": 185,
+    "licenseeCount": 53,
+    "practiceCount": 80,
+    "population": 172483,
+    "advisersPerCapita": 10.7,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "SA",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "507",
+    "regionName": "South Australia - South East",
+    "regionType": "sa4",
+    "adviserCount": 54,
+    "licenseeCount": 15,
+    "practiceCount": 23,
+    "population": 180669,
+    "advisersPerCapita": 3,
+    "whiteSpaceScore": 58,
+    "metroOrRegional": "Regional",
+    "state": "SA",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "601",
+    "regionName": "Hobart",
+    "regionType": "sa4",
+    "adviserCount": 107,
+    "licenseeCount": 31,
+    "practiceCount": 47,
+    "population": 75752,
+    "advisersPerCapita": 14.1,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "TAS",
+    "coordinates": [
+      -42.8821,
+      147.3272
+    ]
+  },
+  {
+    "regionCode": "602",
+    "regionName": "Launceston and North East",
+    "regionType": "sa4",
+    "adviserCount": 91,
+    "licenseeCount": 26,
+    "practiceCount": 40,
+    "population": 90382,
+    "advisersPerCapita": 10.1,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Regional",
+    "state": "TAS",
+    "coordinates": [
+      -41.4332,
+      147.1441
+    ]
+  },
+  {
+    "regionCode": "603",
+    "regionName": "South East",
+    "regionType": "sa4",
+    "adviserCount": 43,
+    "licenseeCount": 12,
+    "practiceCount": 19,
+    "population": 146622,
+    "advisersPerCapita": 2.9,
+    "whiteSpaceScore": 59,
+    "metroOrRegional": "Regional",
+    "state": "TAS",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "604",
+    "regionName": "West and North West",
+    "regionType": "sa4",
+    "adviserCount": 31,
+    "licenseeCount": 9,
+    "practiceCount": 13,
+    "population": 96490,
+    "advisersPerCapita": 3.2,
+    "whiteSpaceScore": 55,
+    "metroOrRegional": "Regional",
+    "state": "TAS",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  },
+  {
+    "regionCode": "701",
+    "regionName": "Australian Capital Territory",
+    "regionType": "sa4",
+    "adviserCount": 508,
+    "licenseeCount": 145,
+    "practiceCount": 221,
+    "population": 417362,
+    "advisersPerCapita": 12.2,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "ACT",
+    "coordinates": [
+      -35.2809,
+      149.13
+    ]
+  },
+  {
+    "regionCode": "801",
+    "regionName": "Darwin",
+    "regionType": "sa4",
+    "adviserCount": 77,
+    "licenseeCount": 22,
+    "practiceCount": 33,
+    "population": 64956,
+    "advisersPerCapita": 11.9,
+    "whiteSpaceScore": 0,
+    "metroOrRegional": "Metro",
+    "state": "NT",
+    "coordinates": [
+      -12.4634,
+      130.8456
+    ]
+  },
+  {
+    "regionCode": "802",
+    "regionName": "Northern Territory - Outback",
+    "regionType": "sa4",
+    "adviserCount": 87,
+    "licenseeCount": 25,
+    "practiceCount": 38,
+    "population": 213246,
+    "advisersPerCapita": 4.1,
+    "whiteSpaceScore": 43,
+    "metroOrRegional": "Regional",
+    "state": "NT",
+    "coordinates": [
+      -33.8688,
+      151.2093
+    ]
+  }
+]
