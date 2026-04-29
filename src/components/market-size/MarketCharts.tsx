@@ -62,11 +62,11 @@ export function MarketCharts({ snapshot, timeSeries }: { snapshot: any; timeSeri
       <div className="bg-white rounded-lg border p-5">
         <h3 className="text-sm font-semibold mb-1">Adviser Channel Mix</h3>
         <p className="text-xs text-muted-foreground mb-4">Source: ASIC Financial Adviser Register</p>
-        <div className="flex items-center gap-6">
-          <ResponsiveContainer width="50%" height={220}>
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+          <ResponsiveContainer width="100%" height={200} className="max-w-[220px]">
             <PieChart>
               <Pie data={snapshot.byChannel} dataKey="adviserCount" nameKey="channel"
-                cx="50%" cy="50%" outerRadius={90} innerRadius={50}>
+                cx="50%" cy="50%" outerRadius={85} innerRadius={48}>
                 {snapshot.byChannel.map((_: any, i: number) => (
                   <Cell key={i} fill={COLORS[i % COLORS.length]} />
                 ))}
@@ -74,12 +74,12 @@ export function MarketCharts({ snapshot, timeSeries }: { snapshot: any; timeSeri
               <Tooltip formatter={(v: any) => [Number(v).toLocaleString(), 'Advisers']} />
             </PieChart>
           </ResponsiveContainer>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 flex-1">
             {snapshot.byChannel.map((c: any, i: number) => (
               <div key={c.channel} className="flex items-center gap-2 text-sm">
                 <div className="w-3 h-3 rounded-sm flex-shrink-0" style={{ background: COLORS[i % COLORS.length] }} />
                 <span className="text-foreground font-medium">{c.channel}</span>
-                <span className="text-muted-foreground">{c.percentage}%</span>
+                <span className="text-muted-foreground ml-auto">{c.percentage}%</span>
               </div>
             ))}
           </div>

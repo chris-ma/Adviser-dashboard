@@ -1,6 +1,6 @@
 'use client';
 import { useState, useMemo } from 'react';
-import { Search, SlidersHorizontal, ChevronRight, X } from 'lucide-react';
+import { Search, SlidersHorizontal, ChevronRight } from 'lucide-react';
 import type { Adviser, Licensee } from '@/types';
 import { StatusBadge } from '@/components/shared/StatusBadge';
 import { WatchlistButton } from '@/components/shared/WatchlistButton';
@@ -42,51 +42,44 @@ export function AdviserIntelligenceClient({ advisers, licensees }: { advisers: A
   return (
     <div>
       {/* Search + filter bar */}
-      <div className="flex gap-3 mb-4">
+      <div className="flex gap-2 mb-4">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <input
             value={filters.q}
             onChange={e => set('q', e.target.value)}
-            placeholder="Search by name, adviser ID, or licensee…"
+            placeholder="Search by name, ID, or licensee…"
             className="w-full pl-9 pr-4 py-2 text-sm border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-primary/30"
           />
         </div>
         <button
           onClick={() => setShowFilters(f => !f)}
-          className={cn('flex items-center gap-2 px-3 py-2 text-sm border rounded-md bg-white',
+          className={cn('flex items-center gap-1.5 px-3 py-2 text-sm border rounded-md bg-white flex-shrink-0',
             showFilters || activeFilters > 0 ? 'border-blue-500 text-blue-600' : 'hover:bg-muted'
           )}
         >
           <SlidersHorizontal className="w-4 h-4" />
-          Filters {activeFilters > 0 && <span className="bg-blue-600 text-white text-xs rounded-full px-1.5">{activeFilters}</span>}
+          <span className="hidden sm:inline">Filters</span>
+          {activeFilters > 0 && <span className="bg-blue-600 text-white text-xs rounded-full px-1.5">{activeFilters}</span>}
         </button>
       </div>
 
       {/* Filters */}
       {showFilters && (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4 p-4 bg-white rounded-lg border">
-          <div>
-            <label className="text-xs font-medium text-muted-foreground">Status</label>
-            <select value={filters.status} onChange={e => set('status', e.target.value)} className="mt-1 w-full text-sm border rounded-md px-2 py-1.5">
-              <option value="">All</option>
-              {STATUSES.map(s => <option key={s}>{s}</option>)}
-            </select>
-          </div>
-          <div>
-            <label className="text-xs font-medium text-muted-foreground">State</label>
-            <select value={filters.state} onChange={e => set('state', e.target.value)} className="mt-1 w-full text-sm border rounded-md px-2 py-1.5">
-              <option value="">All</option>
-              {STATES.map(s => <option key={s}>{s}</option>)}
-            </select>
-          </div>
-          <div>
-            <label className="text-xs font-medium text-muted-foreground">Channel</label>
-            <select value={filters.channel} onChange={e => set('channel', e.target.value)} className="mt-1 w-full text-sm border rounded-md px-2 py-1.5">
-              <option value="">All</option>
-              {CHANNELS.map(c => <option key={c}>{c}</option>)}
-            </select>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-4 p-4 bg-white rounded-lg border">
+          {[
+            { label: 'Status', key: 'status' as keyof Filters, options: STATUSES },
+            { label: 'State', key: 'state' as keyof Filters, options: STATES },
+            { label: 'Channel', key: 'channel' as keyof Filters, options: CHANNELS },
+          ].map(({ label, key, options }) => (
+            <div key={key}>
+              <label className="text-xs font-medium text-muted-foreground">{label}</label>
+              <select value={filters[key]} onChange={e => set(key, e.target.value)} className="mt-1 w-full text-sm border rounded-md px-2 py-1.5">
+                <option value="">All</option>
+                {options.map(o => <option key={o}>{o}</option>)}
+              </select>
+            </div>
+          ))}
           <div>
             <label className="text-xs font-medium text-muted-foreground">Licensee</label>
             <select value={filters.licenseeId} onChange={e => set('licenseeId', e.target.value)} className="mt-1 w-full text-sm border rounded-md px-2 py-1.5">
@@ -97,11 +90,10 @@ export function AdviserIntelligenceClient({ advisers, licensees }: { advisers: A
         </div>
       )}
 
-      {/* Results count */}
       <p className="text-sm text-muted-foreground mb-3">{filtered.length.toLocaleString()} advisers</p>
 
-      {/* Table */}
-      <div className="bg-white rounded-lg border overflow-hidden">
+      {/* Desktop table */}
+      <div className="hidden md:block bg-white rounded-lg border overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -115,12 +107,10 @@ export function AdviserIntelligenceClient({ advisers, licensees }: { advisers: A
               {pageData.map(a => (
                 <tr key={a.id} className="border-b last:border-0 hover:bg-muted/30 transition-colors">
                   <td className="px-4 py-3 font-medium">
-                    <Link href={`/adviser-intelligence/${a.id}`} className="hover:text-blue-600 hover:underline">
-                      {a.fullName}
-                    </Link>
+                    <Link href={`/adviser-intelligence/${a.id}`} className="hover:text-blue-600 hover:underline">{a.fullName}</Link>
                   </td>
                   <td className="px-4 py-3 text-muted-foreground font-mono text-xs">{a.adviserId}</td>
-                  <td className="px-4 py-3 text-muted-foreground max-w-[180px] truncate" title={a.currentLicenseeName}>{a.currentLicenseeName}</td>
+                  <td className="px-4 py-3 text-muted-foreground max-w-[160px] truncate" title={a.currentLicenseeName}>{a.currentLicenseeName}</td>
                   <td className="px-4 py-3"><StatusBadge status={a.status} /></td>
                   <td className="px-4 py-3">{a.location.state}</td>
                   <td className="px-4 py-3 text-muted-foreground">{a.channel}</td>
@@ -138,14 +128,41 @@ export function AdviserIntelligenceClient({ advisers, licensees }: { advisers: A
             </tbody>
           </table>
         </div>
-        {/* Pagination */}
         <div className="px-4 py-3 border-t flex items-center justify-between text-sm text-muted-foreground">
           <span>Page {page} of {pages}</span>
           <div className="flex gap-2">
-            <button disabled={page === 1} onClick={() => setPage(p => p - 1)}
-              className="px-3 py-1 border rounded-md disabled:opacity-40 hover:bg-muted">Prev</button>
-            <button disabled={page >= pages} onClick={() => setPage(p => p + 1)}
-              className="px-3 py-1 border rounded-md disabled:opacity-40 hover:bg-muted">Next</button>
+            <button disabled={page === 1} onClick={() => setPage(p => p - 1)} className="px-3 py-1 border rounded-md disabled:opacity-40 hover:bg-muted">Prev</button>
+            <button disabled={page >= pages} onClick={() => setPage(p => p + 1)} className="px-3 py-1 border rounded-md disabled:opacity-40 hover:bg-muted">Next</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile card list */}
+      <div className="md:hidden space-y-2">
+        {pageData.map(a => (
+          <Link key={a.id} href={`/adviser-intelligence/${a.id}`} className="block bg-white rounded-lg border p-4 hover:bg-muted/30 transition-colors">
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <p className="font-medium text-sm truncate">{a.fullName}</p>
+                <p className="text-xs text-muted-foreground mt-0.5 truncate">{a.currentLicenseeName}</p>
+              </div>
+              <StatusBadge status={a.status} />
+            </div>
+            <div className="flex items-center gap-3 mt-2 text-xs text-muted-foreground">
+              <span>{a.location.state}</span>
+              <span>·</span>
+              <span>{a.channel}</span>
+              <span>·</span>
+              <span>{a.yearsExperience}y exp</span>
+              <WatchlistButton id={a.id} name={a.fullName} type="adviser" className="ml-auto" />
+            </div>
+          </Link>
+        ))}
+        <div className="flex items-center justify-between pt-2 text-sm text-muted-foreground">
+          <span>Page {page} of {pages}</span>
+          <div className="flex gap-2">
+            <button disabled={page === 1} onClick={() => setPage(p => p - 1)} className="px-3 py-1 border rounded-md disabled:opacity-40 bg-white hover:bg-muted">Prev</button>
+            <button disabled={page >= pages} onClick={() => setPage(p => p + 1)} className="px-3 py-1 border rounded-md disabled:opacity-40 bg-white hover:bg-muted">Next</button>
           </div>
         </div>
       </div>
