@@ -79,62 +79,93 @@ export default function ComparePage() {
         </div>
       )}
 
-      {entities.length > 0 && (
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm border-collapse">
-            <thead>
-              <tr>
-                <th className="text-left text-xs font-medium text-muted-foreground px-4 py-3 w-40">Attribute</th>
-                {entities.map(e => (
-                  <th key={e.id} className="px-4 py-3 min-w-[180px]">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-semibold text-sm text-left">{e.name}</p>
-                        <p className="text-xs text-muted-foreground font-normal capitalize">{e.type}</p>
-                      </div>
-                      <button onClick={() => remove(e.id)} className="text-muted-foreground hover:text-foreground ml-2">
-                        <X className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { label: 'Status', render: (ent: typeof entities[0]) => {
-                  const a = getAdviser(ent.id); const l = getLicensee(ent.id);
-                  return <StatusBadge status={a?.status ?? l?.status ?? '—'} />;
-                }},
-                { label: 'Type', render: (ent: typeof entities[0]) => <span className="capitalize">{ent.type}</span> },
-                { label: 'State', render: (ent: typeof entities[0]) => {
-                  const a = getAdviser(ent.id); const l = getLicensee(ent.id);
-                  return <span>{a?.location.state ?? l?.headOfficeState ?? '—'}</span>;
-                }},
-                { label: 'Channel', render: (ent: typeof entities[0]) => {
-                  const a = getAdviser(ent.id); const l = getLicensee(ent.id);
-                  return <span>{a?.channel ?? l?.channel ?? '—'}</span>;
-                }},
-                { label: 'Yrs Exp / Advisers', render: (ent: typeof entities[0]) => {
-                  const a = getAdviser(ent.id); const l = getLicensee(ent.id);
-                  return <span className="font-medium">{a?.yearsExperience != null ? `${a.yearsExperience}y` : l?.adviserCount ?? '—'}</span>;
-                }},
-                { label: 'Current Entity', render: (ent: typeof entities[0]) => {
-                  const a = getAdviser(ent.id); const l = getLicensee(ent.id);
-                  return <span className="text-xs">{a?.currentLicenseeName ?? l?.parentGroup ?? '—'}</span>;
-                }},
-              ].map(row => (
-                <tr key={row.label} className="border-t even:bg-muted/20">
-                  <td className="px-4 py-3 text-xs font-medium text-muted-foreground">{row.label}</td>
-                  {entities.map(ent => (
-                    <td key={ent.id} className="px-4 py-3">{row.render(ent)}</td>
+      {entities.length > 0 && (() => {
+        const rows = [
+          { label: 'Status', render: (ent: typeof entities[0]) => {
+            const a = getAdviser(ent.id); const l = getLicensee(ent.id);
+            return <StatusBadge status={a?.status ?? l?.status ?? '—'} />;
+          }},
+          { label: 'Type', render: (ent: typeof entities[0]) => <span className="capitalize">{ent.type}</span> },
+          { label: 'State', render: (ent: typeof entities[0]) => {
+            const a = getAdviser(ent.id); const l = getLicensee(ent.id);
+            return <span>{a?.location.state ?? l?.headOfficeState ?? '—'}</span>;
+          }},
+          { label: 'Channel', render: (ent: typeof entities[0]) => {
+            const a = getAdviser(ent.id); const l = getLicensee(ent.id);
+            return <span>{a?.channel ?? l?.channel ?? '—'}</span>;
+          }},
+          { label: 'Yrs Exp / Advisers', render: (ent: typeof entities[0]) => {
+            const a = getAdviser(ent.id); const l = getLicensee(ent.id);
+            return <span className="font-medium">{a?.yearsExperience != null ? `${a.yearsExperience}y` : l?.adviserCount ?? '—'}</span>;
+          }},
+          { label: 'Current Entity', render: (ent: typeof entities[0]) => {
+            const a = getAdviser(ent.id); const l = getLicensee(ent.id);
+            return <span className="text-xs">{a?.currentLicenseeName ?? l?.parentGroup ?? '—'}</span>;
+          }},
+        ];
+        return (
+          <>
+            {/* Desktop: scrollable table */}
+            <div className="hidden sm:block overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr>
+                    <th className="text-left text-xs font-medium text-muted-foreground px-4 py-3 w-40">Attribute</th>
+                    {entities.map(ent => (
+                      <th key={ent.id} className="px-4 py-3 min-w-[180px]">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="font-semibold text-sm text-left">{ent.name}</p>
+                            <p className="text-xs text-muted-foreground font-normal capitalize">{ent.type}</p>
+                          </div>
+                          <button onClick={() => remove(ent.id)} className="text-muted-foreground hover:text-foreground ml-2">
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map(row => (
+                    <tr key={row.label} className="border-t even:bg-muted/20">
+                      <td className="px-4 py-3 text-xs font-medium text-muted-foreground">{row.label}</td>
+                      {entities.map(ent => (
+                        <td key={ent.id} className="px-4 py-3">{row.render(ent)}</td>
+                      ))}
+                    </tr>
                   ))}
-                </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile: stacked cards */}
+            <div className="sm:hidden space-y-3">
+              {entities.map(ent => (
+                <div key={ent.id} className="bg-white rounded-lg border overflow-hidden">
+                  <div className="flex items-center justify-between px-4 py-3 bg-muted/30 border-b">
+                    <div>
+                      <p className="font-semibold text-sm">{ent.name}</p>
+                      <p className="text-xs text-muted-foreground capitalize">{ent.type}</p>
+                    </div>
+                    <button onClick={() => remove(ent.id)} className="text-muted-foreground hover:text-foreground p-1">
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                  <div className="divide-y">
+                    {rows.map(row => (
+                      <div key={row.label} className="flex items-center justify-between px-4 py-2.5 text-sm">
+                        <span className="text-xs font-medium text-muted-foreground">{row.label}</span>
+                        <span>{row.render(ent)}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+            </div>
+          </>
+        );
+      })()}
     </div>
   );
 }

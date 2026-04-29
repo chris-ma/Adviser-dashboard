@@ -59,12 +59,13 @@ export function PersonaCard({ persona }: { persona: AdviserPersona | ConsumerPer
           </div>
         )}
 
+
         <button onClick={() => setExpanded(e => !e)} className="flex items-center gap-1 text-xs text-blue-600 hover:underline">
           {expanded ? <><ChevronUp className="w-3 h-3" />Less</> : <><ChevronDown className="w-3 h-3" />Pain points & motivations</>}
         </button>
 
         {expanded && (
-          <div className="mt-3 grid grid-cols-2 gap-3 text-xs border-t pt-3">
+          <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs border-t pt-3">
             <div>
               <p className="font-medium mb-1">Pain Points</p>
               <ul className="space-y-0.5 text-muted-foreground">

@@ -25,9 +25,9 @@ function RegulatoryItemCard({ item }: { item: RegulatoryItem }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="bg-white rounded-lg border p-5">
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-1">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-wrap items-center gap-2 mb-1">
             <ImpactBadge impact={item.impact} />
             <StatusBadge status={item.status} />
             <span className="text-xs text-muted-foreground">{item.source}</span>
@@ -35,7 +35,7 @@ function RegulatoryItemCard({ item }: { item: RegulatoryItem }) {
           <h3 className="font-semibold text-sm">{item.title}</h3>
           <p className="text-xs text-muted-foreground mt-1">{item.summary}</p>
         </div>
-        <div className="text-right text-xs text-muted-foreground flex-shrink-0">
+        <div className="sm:text-right text-xs text-muted-foreground sm:flex-shrink-0">
           <p>{new Date(item.publishedDate).toLocaleDateString('en-AU', { year: 'numeric', month: 'short' })}</p>
           {item.effectiveDate && <p className="mt-0.5">Effective: {new Date(item.effectiveDate).toLocaleDateString('en-AU', { year: 'numeric', month: 'short' })}</p>}
         </div>
@@ -76,7 +76,7 @@ export default function RegulatoryPage() {
         source="ASIC / Treasury / APRA / AFCA"
         asAtDate="31 March 2024"
       />
-      <div className="flex gap-3 mb-4">
+      <div className="flex flex-wrap gap-3 mb-4">
         <select value={impact} onChange={e => setImpact(e.target.value)} className="text-sm border rounded-md px-2 py-1.5 bg-white">
           <option value="">All impact levels</option>
           {['High','Medium','Low','Watch'].map(i => <option key={i}>{i}</option>)}
