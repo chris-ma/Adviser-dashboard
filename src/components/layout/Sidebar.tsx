@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import {
-  BarChart3, Users, MapPin, Building2, Brain, Shield, GitCompare, TrendingUp, X
+  BarChart3, Users, MapPin, Building2, Brain, Shield, GitCompare, TrendingUp, X, RefreshCw
 } from 'lucide-react';
 
 const nav = [
@@ -15,6 +15,10 @@ const nav = [
   { href: '/psychographics', label: 'Psychographics', icon: Brain },
   { href: '/regulatory', label: 'Regulatory Radar', icon: Shield },
   { href: '/compare', label: 'Compare', icon: GitCompare },
+];
+
+const adminNav = [
+  { href: '/admin', label: 'Data Sync', icon: RefreshCw },
 ];
 
 interface SidebarProps {
@@ -58,9 +62,24 @@ function SidebarContent({ onClose }: { onClose?: () => void }) {
           </Link>
         ))}
       </nav>
-      <div className="px-4 py-4 border-t border-navy-800">
-        <p className="text-xs text-navy-400">Data as at 31 Mar 2024</p>
-        <p className="text-xs text-navy-500 mt-0.5">ASIC Register + IBISWorld</p>
+      <div className="px-3 py-3 border-t border-navy-800 space-y-0.5">
+        {adminNav.map(({ href, label, icon: Icon }) => (
+          <Link
+            key={href}
+            href={href}
+            onClick={onClose}
+            className={cn(
+              'flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors',
+              pathname.startsWith(href)
+                ? 'bg-blue-600 text-white'
+                : 'text-navy-400 hover:bg-navy-800 hover:text-white'
+            )}
+          >
+            <Icon className="w-4 h-4 flex-shrink-0" />
+            {label}
+          </Link>
+        ))}
+        <p className="text-xs text-navy-500 px-3 pt-1">ASIC Register + IBISWorld</p>
       </div>
     </>
   );
