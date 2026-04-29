@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import movementsData from '@/data/mock/movements.json';
 import type { MovementEvent } from '@/types';
+import { prisma } from '@/lib/prisma';
 
 const Query = z.object({
   adviserId: z.string().optional(),
@@ -13,6 +14,25 @@ const Query = z.object({
   pageSize: z.coerce.number().max(200).default(50),
 });
 
+function dbToMovement(row: {
+  id: string; adviserId: string; adviserName: string; eventType: string;
+  fromLicenseeId: string | null; fromLicenseeName: string | null;
+  toLicenseeId: string | null; toLicenseeName: string | null;
+  eventDate: string; effectiveDate: string | null; source: string;
+}): MovementEvent {
+  return {
+    id: row.id, adviserId: row.adviserId, adviserName: row.adviserName,
+    eventType: row.eventType as MovementEvent['eventType'],
+    fromLicenseeId: row.fromLicenseeId ?? undefined,
+    fromLicenseeName: row.fromLicenseeName ?? undefined,
+    toLicenseeId: row.toLicenseeId ?? undefined,
+    toLicenseeName: row.toLicenseeName ?? undefined,
+    eventDate: row.eventDate,
+    effectiveDate: row.effectiveDate ?? row.eventDate,
+    source: row.source,
+  };
+}
+
 export async function GET(req: NextRequest) {
   const params = Object.fromEntries(req.nextUrl.searchParams);
   const q = Query.safeParse(params);
@@ -20,17 +40,32 @@ export async function GET(req: NextRequest) {
 
   const { adviserId, licenseeId, eventType, fromDate, toDate, page, pageSize } = q.data;
 
-  let data = movementsData as MovementEvent[];
+  const dbCount = await prisma.syncMovement.count();
+  let data: MovementEvent[];
+  let asAtDate = '2024-03-31';
+
+  if (dbCount > 0) {
+    const rows = await prisma.syncMovement.findMany({ orderBy: { eventDate: 'desc' } });
+    data = rows.map(dbToMovement);
+    const latest = await prisma.syncLog.findFirst({
+      where: { status: 'success' },
+      orderBy: { completedAt: 'desc' },
+      select: { completedAt: true },
+    });
+    if (latest?.completedAt) asAtDate = latest.completedAt.toISOString().substring(0, 10);
+  } else {
+    data = movementsData as MovementEvent[];
+  }
 
   if (adviserId) data = data.filter(m => m.adviserId === adviserId);
   if (licenseeId) data = data.filter(m => m.fromLicenseeId === licenseeId || m.toLicenseeId === licenseeId);
   if (eventType) data = data.filter(m => m.eventType === eventType);
-  if (fromDate) data = data.filter(m => m.eventDate >= fromDate);
-  if (toDate) data = data.filter(m => m.eventDate <= toDate);
+  if (fromDate)  data = data.filter(m => m.eventDate >= fromDate);
+  if (toDate)    data = data.filter(m => m.eventDate <= toDate);
 
   const total = data.length;
   return NextResponse.json({
     data: data.slice((page - 1) * pageSize, page * pageSize),
-    meta: { total, page, pageSize, source: 'ASIC Financial Adviser Register', asAtDate: '2024-03-31', generatedAt: new Date().toISOString() },
+    meta: { total, page, pageSize, source: 'ASIC Financial Adviser Register', asAtDate, generatedAt: new Date().toISOString() },
   });
 }

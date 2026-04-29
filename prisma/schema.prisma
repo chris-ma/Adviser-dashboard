@@ -36,3 +36,103 @@ model SavedSearch {
   queryParams String
   createdAt   DateTime @default(now())
 }
+
+// ── Live data synced from ASIC register ──────────────────────────────────────
+
+model SyncAdviser {
+  id                  String   @id
+  adviserId           String   @unique
+  firstName           String
+  lastName            String
+  fullName            String
+  status              String
+  registrationDate    String
+  channel             String
+  currentLicenseeId   String
+  currentLicenseeName String
+  currentFirmName     String
+  locationJson        String
+  qualificationsJson  String
+  productAuthsJson    String
+  workHistoryJson     String
+  yearsExperience     Int
+  specialisationsJson String
+  lastUpdated         String
+  syncedAt            DateTime @updatedAt
+
+  @@map("sync_advisers")
+}
+
+model SyncLicensee {
+  id                 String   @id
+  afslNumber         String   @unique
+  name               String
+  tradingName        String?
+  parentGroup        String?
+  abn                String
+  registrationDate   String
+  status             String
+  headOfficeState    String
+  headOfficePostcode String
+  adviserCount       Int
+  practiceCount      Int
+  channel            String
+  tier               String
+  productsJson       String
+  historyJson        String
+  website            String?
+  syncedAt           DateTime @updatedAt
+
+  @@map("sync_licensees")
+}
+
+model SyncMovement {
+  id               String   @id
+  adviserId        String
+  adviserName      String
+  eventType        String
+  fromLicenseeId   String?
+  fromLicenseeName String?
+  toLicenseeId     String?
+  toLicenseeName   String?
+  eventDate        String
+  effectiveDate    String?
+  source           String   @default("ASIC Register")
+  syncedAt         DateTime @default(now())
+
+  @@map("sync_movements")
+}
+
+model SyncGeographic {
+  regionCode        String   @id
+  regionName        String
+  regionType        String
+  state             String
+  adviserCount      Int
+  practiceCount     Int
+  population        Int
+  advisersPerCapita Float
+  whiteSpaceScore   Int
+  metroOrRegional   String
+  coordinatesJson   String
+  syncedAt          DateTime @updatedAt
+
+  @@map("sync_geographic")
+}
+
+model SyncLog {
+  id               String    @id @default(cuid())
+  startedAt        DateTime  @default(now())
+  completedAt      DateTime?
+  status           String
+  source           String
+  advisersAdded    Int       @default(0)
+  advisersUpdated  Int       @default(0)
+  licenseesAdded   Int       @default(0)
+  licenseesUpdated Int       @default(0)
+  movementsAdded   Int       @default(0)
+  errorMessage     String?
+  notes            String?
+
+  @@map("sync_logs")
+}
