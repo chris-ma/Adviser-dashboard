@@ -50,7 +50,7 @@ export async function GET(req: NextRequest) {
   const { q: search, status, state, channel, tier, minAdvisers, maxAdvisers,
     page, pageSize, sortBy, sortDir } = q.data;
 
-  const dbCount = await prisma.syncLicensee.count();
+  const dbCount = await prisma.syncLicensee.count().catch(() => 0);
   let data: Licensee[];
   let asAtDate = '2024-03-31';
 

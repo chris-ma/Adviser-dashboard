@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
   const state    = searchParams.get('state');
   const metroOnly = searchParams.get('metroOnly') === 'true';
 
-  const dbCount = await prisma.syncGeographic.count();
+  const dbCount = await prisma.syncGeographic.count().catch(() => 0);
   let data: any[];
   let asAtDate = '2024-03-31';
 

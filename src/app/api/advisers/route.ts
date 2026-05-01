@@ -55,7 +55,7 @@ export async function GET(req: NextRequest) {
     specialisation, page, pageSize, sortBy, sortDir } = q.data;
 
   // Use live DB if synced data exists, otherwise fall back to mock JSON
-  const dbCount = await prisma.syncAdviser.count();
+  const dbCount = await prisma.syncAdviser.count().catch(() => 0);
   let data: Adviser[];
   let asAtDate = '2024-03-31';
 

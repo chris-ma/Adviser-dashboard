@@ -4,6 +4,10 @@ import { RefreshCw, CheckCircle, XCircle, Clock, Database, AlertTriangle } from 
 import { PageHeader } from '@/components/layout/PageHeader';
 import { formatDistanceToNow } from 'date-fns';
 
+// Baked in at build time from NEXT_PUBLIC_SYNC_SECRET env var.
+// Set the same value as SYNC_SECRET in Vercel → Settings → Environment Variables.
+const BAKED_SECRET = process.env.NEXT_PUBLIC_SYNC_SECRET ?? '';
+
 interface SyncLog {
   id: string;
   startedAt: string;
@@ -26,7 +30,6 @@ function StatusIcon({ status }: { status: string }) {
 }
 
 export default function AdminPage() {
-  const [secret, setSecret]     = useState('');
   const [syncing, setSyncing]   = useState(false);
   const [result, setResult]     = useState<string | null>(null);
   const [isError, setIsError]   = useState(false);
@@ -53,7 +56,7 @@ export default function AdminPage() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          ...(secret ? { Authorization: `Bearer ${secret}` } : {}),
+          ...(BAKED_SECRET ? { Authorization: `Bearer ${BAKED_SECRET}` } : {}),
         },
       });
       const json = await res.json();
@@ -120,27 +123,14 @@ export default function AdminPage() {
           Takes 30–90 seconds for ~15,000 records.
         </p>
 
-        <div className="space-y-3">
-          <div>
-            <label className="text-xs font-medium text-muted-foreground">Sync secret (from .env SYNC_SECRET)</label>
-            <input
-              type="password"
-              value={secret}
-              onChange={e => setSecret(e.target.value)}
-              placeholder="Enter sync secret…"
-              className="mt-1 w-full text-sm border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
-            />
-          </div>
-
-          <button
-            onClick={triggerSync}
-            disabled={syncing}
-            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
-          >
-            <RefreshCw className={`w-4 h-4 ${syncing ? 'animate-spin' : ''}`} />
-            {syncing ? 'Syncing ASIC Register…' : 'Sync Now'}
-          </button>
-        </div>
+        <button
+          onClick={triggerSync}
+          disabled={syncing}
+          className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+        >
+          <RefreshCw className={`w-4 h-4 ${syncing ? 'animate-spin' : ''}`} />
+          {syncing ? 'Syncing ASIC Register…' : 'Sync Now'}
+        </button>
 
         {result && (
           <div className={`mt-3 p-3 rounded-md text-sm flex items-start gap-2 ${

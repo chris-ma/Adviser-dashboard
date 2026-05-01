@@ -40,7 +40,7 @@ export async function GET(req: NextRequest) {
 
   const { adviserId, licenseeId, eventType, fromDate, toDate, page, pageSize } = q.data;
 
-  const dbCount = await prisma.syncMovement.count();
+  const dbCount = await prisma.syncMovement.count().catch(() => 0);
   let data: MovementEvent[];
   let asAtDate = '2024-03-31';
 
