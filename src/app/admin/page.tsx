@@ -1,12 +1,13 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
-import { RefreshCw, CheckCircle, XCircle, Clock, Database, AlertTriangle } from 'lucide-react';
+import { RefreshCw, CheckCircle, XCircle, Clock, Database, AlertTriangle, KeyRound, ChevronDown } from 'lucide-react';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { formatDistanceToNow } from 'date-fns';
 
 // Baked in at build time from NEXT_PUBLIC_SYNC_SECRET env var.
 // Set the same value as SYNC_SECRET in Vercel → Settings → Environment Variables.
 const BAKED_SECRET = process.env.NEXT_PUBLIC_SYNC_SECRET ?? '';
+const LS_KEY = 'syncSecretOverride';
 
 interface SyncLog {
   id: string;
@@ -30,11 +31,27 @@ function StatusIcon({ status }: { status: string }) {
 }
 
 export default function AdminPage() {
-  const [syncing, setSyncing]   = useState(false);
-  const [result, setResult]     = useState<string | null>(null);
-  const [isError, setIsError]   = useState(false);
-  const [logs, setLogs]         = useState<SyncLog[]>([]);
+  const [syncing, setSyncing]       = useState(false);
+  const [result, setResult]         = useState<string | null>(null);
+  const [isError, setIsError]       = useState(false);
+  const [logs, setLogs]             = useState<SyncLog[]>([]);
   const [logsLoading, setLogsLoading] = useState(true);
+  const [secretInput, setSecretInput] = useState(BAKED_SECRET);
+  const [secretOpen, setSecretOpen]   = useState(false);
+
+  useEffect(() => {
+    const override = localStorage.getItem(LS_KEY);
+    if (override) setSecretInput(override);
+  }, []);
+
+  function handleSecretChange(val: string) {
+    setSecretInput(val);
+    if (val && val !== BAKED_SECRET) {
+      localStorage.setItem(LS_KEY, val);
+    } else {
+      localStorage.removeItem(LS_KEY);
+    }
+  }
 
   const fetchLogs = useCallback(async () => {
     try {
@@ -51,18 +68,20 @@ export default function AdminPage() {
     setSyncing(true);
     setResult(null);
     setIsError(false);
+    const secret = secretInput || BAKED_SECRET;
     try {
       const res = await fetch('/api/sync', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          ...(BAKED_SECRET ? { Authorization: `Bearer ${BAKED_SECRET}` } : {}),
+          ...(secret ? { Authorization: `Bearer ${secret}` } : {}),
         },
       });
       const json = await res.json();
       if (!res.ok) {
         setIsError(true);
         setResult(json.error ?? `Error ${res.status}`);
+        if (res.status === 401) setSecretOpen(true);
       } else {
         const d = json.data;
         setResult(
@@ -79,6 +98,7 @@ export default function AdminPage() {
   }
 
   const latest = logs[0];
+  const usingDefaultSecret = !secretInput || secretInput === 'change-me-in-production';
 
   return (
     <div>
@@ -123,6 +143,16 @@ export default function AdminPage() {
           Takes 30–90 seconds for ~15,000 records.
         </p>
 
+        {/* Secret warning */}
+        {usingDefaultSecret && (
+          <div className="flex items-start gap-2 p-3 mb-3 bg-yellow-50 border border-yellow-200 rounded-md text-xs text-yellow-800">
+            <AlertTriangle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+            <span>
+              Sync secret is still the default placeholder. Set <code className="font-mono bg-yellow-100 px-1 rounded">SYNC_SECRET</code> and <code className="font-mono bg-yellow-100 px-1 rounded">NEXT_PUBLIC_SYNC_SECRET</code> to the same value in Vercel, then redeploy. Or enter your secret below.
+            </span>
+          </div>
+        )}
+
         <button
           onClick={triggerSync}
           disabled={syncing}
@@ -142,6 +172,36 @@ export default function AdminPage() {
             <span>{result}</span>
           </div>
         )}
+
+        {/* Override sync secret (collapsible) */}
+        <div className="mt-4 border-t pt-3">
+          <button
+            type="button"
+            onClick={() => setSecretOpen(o => !o)}
+            className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <KeyRound className="w-3.5 h-3.5" />
+            Override sync secret
+            <ChevronDown className={`w-3.5 h-3.5 transition-transform ${secretOpen ? 'rotate-180' : ''}`} />
+          </button>
+          {secretOpen && (
+            <div className="mt-2">
+              <p className="text-xs text-muted-foreground mb-1.5">
+                Use this if your deployed <code className="font-mono bg-muted px-1 rounded">SYNC_SECRET</code> differs from the value baked into this build. The override is saved in browser storage.
+              </p>
+              <input
+                type="password"
+                value={secretInput}
+                onChange={e => handleSecretChange(e.target.value)}
+                placeholder="Enter your SYNC_SECRET value"
+                className="w-full text-xs font-mono px-3 py-2 border rounded-md bg-muted focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              {secretInput && secretInput !== BAKED_SECRET && (
+                <p className="text-xs text-blue-600 mt-1">Override active — using manually entered secret.</p>
+              )}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* How the sync works */}
