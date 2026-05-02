@@ -11,6 +11,8 @@
 
 import { z } from 'zod';
 import * as fs from 'fs';
+import * as https from 'https';
+import * as http from 'http';
 
 // ── Default CSV source ────────────────────────────────────────────────────────
 // The CKAN package API is used to discover the current CSV URL dynamically,
@@ -33,7 +35,6 @@ async function resolveCsvUrl(): Promise<string> {
     if (!res.ok) return ASIC_CSV_FALLBACK_URL;
     const json = await res.json() as { result?: { resources?: Array<{ url: string; format: string; name: string }> } };
     const resources = json.result?.resources ?? [];
-    // Prefer a resource whose format is CSV or whose name/url ends with .csv
     const csv = resources.find(r =>
       r.format?.toUpperCase() === 'CSV' ||
       r.url?.toLowerCase().endsWith('.csv') ||
@@ -43,6 +44,42 @@ async function resolveCsvUrl(): Promise<string> {
   } catch {
     return ASIC_CSV_FALLBACK_URL;
   }
+}
+
+/**
+ * Downloads a URL using Node.js native https/http, manually following up to
+ * `maxRedirects` redirects. Bypasses Next.js's patched global fetch entirely,
+ * which is unreliable for cross-origin redirect chains in serverless environments.
+ */
+function fetchWithRedirects(url: string, maxRedirects = 10): Promise<string> {
+  return new Promise((resolve, reject) => {
+    let redirectsLeft = maxRedirects;
+
+    function request(currentUrl: string) {
+      const lib = currentUrl.startsWith('https') ? https : http;
+      lib.get(currentUrl, {
+        headers: { 'User-Agent': 'AdviserDashboard/1.0 data@example.com' },
+        timeout: 120_000,
+      }, (res) => {
+        // Follow redirects (301, 302, 303, 307, 308)
+        if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          if (redirectsLeft-- <= 0) return reject(new Error(`Too many redirects from ${url}`));
+          const next = new URL(res.headers.location, currentUrl).toString();
+          res.resume(); // drain the response
+          return request(next);
+        }
+        if (!res.statusCode || res.statusCode < 200 || res.statusCode >= 300) {
+          return reject(new Error(`ASIC CSV fetch failed: ${res.statusCode} ${res.statusMessage} (url: ${currentUrl})`));
+        }
+        const chunks: Buffer[] = [];
+        res.on('data', (chunk: Buffer) => chunks.push(chunk));
+        res.on('end', () => resolve(Buffer.concat(chunks).toString('utf-8')));
+        res.on('error', reject);
+      }).on('error', reject).on('timeout', () => reject(new Error('ASIC CSV fetch timed out')));
+    }
+
+    request(url);
+  });
 }
 
 // ── Zod schema for a single parsed row ───────────────────────────────────────
@@ -198,17 +235,10 @@ export async function fetchAsicCsv(override?: string): Promise<AsicRow[]> {
 
   // Use the explicit override, env URL, or dynamically discover via CKAN API.
   const src = override
-    ?? (process.env.ASIC_CSV_URL && process.env.ASIC_CSV_URL.startsWith('http') ? process.env.ASIC_CSV_URL : null)
+    ?? (process.env.ASIC_CSV_URL?.startsWith('http') ? process.env.ASIC_CSV_URL : null)
     ?? await resolveCsvUrl();
 
-  const res = await fetch(src, {
-    headers: { 'User-Agent': 'AdviserDashboard/1.0 data@example.com' },
-    signal: AbortSignal.timeout(120_000),
-    cache: 'no-store',
-    redirect: 'follow',
-  });
-  if (!res.ok) throw new Error(`ASIC CSV fetch failed: ${res.status} ${res.statusText} (url: ${src})`);
-  const text = await res.text();
-
+  // Use native https (not Next.js's patched fetch) to reliably follow redirects.
+  const text = await fetchWithRedirects(src);
   return parseAsicCsv(text);
 }
