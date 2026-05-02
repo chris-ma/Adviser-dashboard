@@ -169,9 +169,13 @@ export async function fetchAsicCsv(override?: string): Promise<AsicRow[]> {
   if (!src.startsWith('http')) {
     text = fs.readFileSync(src, 'utf-8');
   } else {
+    // cache:'no-store' prevents Next.js's patched fetch from caching/intercepting.
+    // redirect:'follow' explicitly follows the 302 data.gov.au CKAN download redirects.
     const res = await fetch(src, {
       headers: { 'User-Agent': 'AdviserDashboard/1.0 data@example.com' },
       signal: AbortSignal.timeout(60_000),
+      cache: 'no-store',
+      redirect: 'follow',
     });
     if (!res.ok) throw new Error(`ASIC CSV fetch failed: ${res.status} ${res.statusText}`);
     text = await res.text();
