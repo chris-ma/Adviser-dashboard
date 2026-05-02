@@ -26,28 +26,6 @@ const CKAN_PACKAGE_API =
 const ASIC_CSV_FALLBACK_URL =
   'https://data.gov.au/data/dataset/f2b7c2c1-f4ef-4ae9-aba5-45c19e4d3038/resource/691ff9ed-b601-481d-8283-88127dbbc869/download/financial-advisers-register.csv';
 
-/** Resolve the current CSV download URL via the CKAN package API. */
-async function resolveCsvUrl(): Promise<string> {
-  try {
-    const res = await fetch(CKAN_PACKAGE_API, {
-      cache: 'no-store',
-      redirect: 'follow',
-      signal: AbortSignal.timeout(15_000),
-    });
-    if (!res.ok) return ASIC_CSV_FALLBACK_URL;
-    const json = await res.json() as { result?: { resources?: Array<{ url: string; format: string; name: string }> } };
-    const resources = json.result?.resources ?? [];
-    const csv = resources.find(r =>
-      r.format?.toUpperCase() === 'CSV' ||
-      r.url?.toLowerCase().endsWith('.csv') ||
-      r.name?.toLowerCase().includes('adviser')
-    );
-    return csv?.url ?? ASIC_CSV_FALLBACK_URL;
-  } catch {
-    return ASIC_CSV_FALLBACK_URL;
-  }
-}
-
 /**
  * Downloads a URL using Node.js native https/http, manually following up to
  * `maxRedirects` redirects. Bypasses Next.js's patched global fetch entirely,
@@ -63,15 +41,21 @@ function fetchWithRedirects(url: string, maxRedirects = 10): Promise<string> {
         headers: { 'User-Agent': 'AdviserDashboard/1.0 data@example.com' },
         timeout: 120_000,
       }, (res) => {
+        const { statusCode, statusMessage, headers } = res;
         // Follow redirects (301, 302, 303, 307, 308)
-        if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        if (statusCode && statusCode >= 300 && statusCode < 400) {
+          const location = headers.location;
+          if (!location) {
+            res.resume();
+            return reject(new Error(`ASIC CSV fetch got ${statusCode} with no Location header (url: ${currentUrl})`));
+          }
           if (redirectsLeft-- <= 0) return reject(new Error(`Too many redirects from ${url}`));
-          const next = new URL(res.headers.location, currentUrl).toString();
-          res.resume(); // drain the response
+          const next = new URL(location, currentUrl).toString();
+          res.resume();
           return request(next);
         }
-        if (!res.statusCode || res.statusCode < 200 || res.statusCode >= 300) {
-          return reject(new Error(`ASIC CSV fetch failed: ${res.statusCode} ${res.statusMessage} (url: ${currentUrl})`));
+        if (!statusCode || statusCode < 200 || statusCode >= 300) {
+          return reject(new Error(`ASIC CSV fetch failed: ${statusCode} ${statusMessage} (url: ${currentUrl})`));
         }
         const chunks: Buffer[] = [];
         res.on('data', (chunk: Buffer) => chunks.push(chunk));
@@ -82,6 +66,23 @@ function fetchWithRedirects(url: string, maxRedirects = 10): Promise<string> {
 
     request(url);
   });
+}
+
+/** Resolve the current CSV download URL via the CKAN package API (uses native https). */
+async function resolveCsvUrl(): Promise<string> {
+  try {
+    const text = await fetchWithRedirects(CKAN_PACKAGE_API);
+    const json = JSON.parse(text) as { result?: { resources?: Array<{ url: string; format: string; name: string }> } };
+    const resources = json.result?.resources ?? [];
+    const csv = resources.find(r =>
+      r.format?.toUpperCase() === 'CSV' ||
+      r.url?.toLowerCase().endsWith('.csv') ||
+      r.name?.toLowerCase().includes('adviser')
+    );
+    return csv?.url ?? ASIC_CSV_FALLBACK_URL;
+  } catch {
+    return ASIC_CSV_FALLBACK_URL;
+  }
 }
 
 // ── Zod schema for a single parsed row ───────────────────────────────────────
