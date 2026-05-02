@@ -13,10 +13,37 @@ import { z } from 'zod';
 import * as fs from 'fs';
 
 // ── Default CSV source ────────────────────────────────────────────────────────
-// Updated weekly by ASIC; override with ASIC_CSV_URL env var or ASIC_CSV_LOCAL_PATH
-const ASIC_CSV_DEFAULT_URL =
-  process.env.ASIC_CSV_URL ??
+// The CKAN package API is used to discover the current CSV URL dynamically,
+// so this survives ASIC changing their resource IDs (which they do periodically).
+const CKAN_PACKAGE_API =
+  'https://data.gov.au/api/3/action/package_show?id=asic-financial-adviser';
+
+// Fallback direct URL — used only if the CKAN API is unreachable.
+const ASIC_CSV_FALLBACK_URL =
   'https://data.gov.au/data/dataset/asic-financial-adviser/resource/a8bdde0b-4b3b-421b-8f24-40d4b7b5d1b5/download/asic-financial-advisers-register.csv';
+
+/** Resolve the current CSV download URL via the CKAN package API. */
+async function resolveCsvUrl(): Promise<string> {
+  try {
+    const res = await fetch(CKAN_PACKAGE_API, {
+      cache: 'no-store',
+      redirect: 'follow',
+      signal: AbortSignal.timeout(15_000),
+    });
+    if (!res.ok) return ASIC_CSV_FALLBACK_URL;
+    const json = await res.json() as { result?: { resources?: Array<{ url: string; format: string; name: string }> } };
+    const resources = json.result?.resources ?? [];
+    // Prefer a resource whose format is CSV or whose name/url ends with .csv
+    const csv = resources.find(r =>
+      r.format?.toUpperCase() === 'CSV' ||
+      r.url?.toLowerCase().endsWith('.csv') ||
+      r.name?.toLowerCase().includes('adviser')
+    );
+    return csv?.url ?? ASIC_CSV_FALLBACK_URL;
+  } catch {
+    return ASIC_CSV_FALLBACK_URL;
+  }
+}
 
 // ── Zod schema for a single parsed row ───────────────────────────────────────
 export const AsicRowSchema = z.object({
@@ -163,23 +190,25 @@ function normaliseDate(raw: string): string {
 // ── Fetch from URL or local file ─────────────────────────────────────────────
 
 export async function fetchAsicCsv(override?: string): Promise<AsicRow[]> {
-  const src = override ?? process.env.ASIC_CSV_LOCAL_PATH ?? ASIC_CSV_DEFAULT_URL;
-
-  let text: string;
-  if (!src.startsWith('http')) {
-    text = fs.readFileSync(src, 'utf-8');
-  } else {
-    // cache:'no-store' prevents Next.js's patched fetch from caching/intercepting.
-    // redirect:'follow' explicitly follows the 302 data.gov.au CKAN download redirects.
-    const res = await fetch(src, {
-      headers: { 'User-Agent': 'AdviserDashboard/1.0 data@example.com' },
-      signal: AbortSignal.timeout(60_000),
-      cache: 'no-store',
-      redirect: 'follow',
-    });
-    if (!res.ok) throw new Error(`ASIC CSV fetch failed: ${res.status} ${res.statusText}`);
-    text = await res.text();
+  // Local file path takes highest priority (useful for testing).
+  const localPath = process.env.ASIC_CSV_LOCAL_PATH;
+  if (!override && localPath && !localPath.startsWith('http')) {
+    return parseAsicCsv(fs.readFileSync(localPath, 'utf-8'));
   }
+
+  // Use the explicit override, env URL, or dynamically discover via CKAN API.
+  const src = override
+    ?? (process.env.ASIC_CSV_URL && process.env.ASIC_CSV_URL.startsWith('http') ? process.env.ASIC_CSV_URL : null)
+    ?? await resolveCsvUrl();
+
+  const res = await fetch(src, {
+    headers: { 'User-Agent': 'AdviserDashboard/1.0 data@example.com' },
+    signal: AbortSignal.timeout(120_000),
+    cache: 'no-store',
+    redirect: 'follow',
+  });
+  if (!res.ok) throw new Error(`ASIC CSV fetch failed: ${res.status} ${res.statusText} (url: ${src})`);
+  const text = await res.text();
 
   return parseAsicCsv(text);
 }
