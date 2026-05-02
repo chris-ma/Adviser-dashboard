@@ -17,12 +17,14 @@ import * as http from 'http';
 // ── Default CSV source ────────────────────────────────────────────────────────
 // The CKAN package API is used to discover the current CSV URL dynamically,
 // so this survives ASIC changing their resource IDs (which they do periodically).
+// Dataset: https://data.gov.au/data/dataset/f2b7c2c1-f4ef-4ae9-aba5-45c19e4d3038
 const CKAN_PACKAGE_API =
-  'https://data.gov.au/api/3/action/package_show?id=asic-financial-adviser';
+  'https://data.gov.au/api/3/action/package_show?id=f2b7c2c1-f4ef-4ae9-aba5-45c19e4d3038';
 
-// Fallback direct URL — used only if the CKAN API is unreachable.
+// Fallback: direct CKAN download proxy for resource 691ff9ed (Financial Advisers Dataset - Current)
+// CKAN's /download/ endpoint redirects to the actual file (S3/CDN).
 const ASIC_CSV_FALLBACK_URL =
-  'https://data.gov.au/data/dataset/asic-financial-adviser/resource/a8bdde0b-4b3b-421b-8f24-40d4b7b5d1b5/download/asic-financial-advisers-register.csv';
+  'https://data.gov.au/data/dataset/f2b7c2c1-f4ef-4ae9-aba5-45c19e4d3038/resource/691ff9ed-b601-481d-8283-88127dbbc869/download/financial-advisers-register.csv';
 
 /** Resolve the current CSV download URL via the CKAN package API. */
 async function resolveCsvUrl(): Promise<string> {
