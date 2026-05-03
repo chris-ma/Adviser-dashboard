@@ -1,6 +1,6 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
-import { RefreshCw, CheckCircle, XCircle, Clock, Database, AlertTriangle, KeyRound, ChevronDown } from 'lucide-react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { RefreshCw, CheckCircle, XCircle, Clock, Database, AlertTriangle, KeyRound, ChevronDown, Upload, ExternalLink } from 'lucide-react';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { formatDistanceToNow } from 'date-fns';
 
@@ -31,13 +31,15 @@ function StatusIcon({ status }: { status: string }) {
 }
 
 export default function AdminPage() {
-  const [syncing, setSyncing]       = useState(false);
-  const [result, setResult]         = useState<string | null>(null);
-  const [isError, setIsError]       = useState(false);
-  const [logs, setLogs]             = useState<SyncLog[]>([]);
+  const [syncing, setSyncing]         = useState(false);
+  const [result, setResult]           = useState<string | null>(null);
+  const [isError, setIsError]         = useState(false);
+  const [logs, setLogs]               = useState<SyncLog[]>([]);
   const [logsLoading, setLogsLoading] = useState(true);
   const [secretInput, setSecretInput] = useState(BAKED_SECRET);
   const [secretOpen, setSecretOpen]   = useState(false);
+  const [csvFile, setCsvFile]         = useState<File | null>(null);
+  const fileInputRef                  = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const override = localStorage.getItem(LS_KEY);
@@ -88,6 +90,41 @@ export default function AdminPage() {
           `Sync complete — ${d.advisersAdded} added, ${d.advisersUpdated} updated, ` +
           `${d.movementsAdded} movements detected (as at ${d.asAtDate})`
         );
+        fetchLogs();
+      }
+    } catch (e) {
+      setIsError(true);
+      setResult(String(e));
+    }
+    setSyncing(false);
+  }
+
+  async function uploadAndSync() {
+    if (!csvFile) return;
+    setSyncing(true);
+    setResult(null);
+    setIsError(false);
+    const secret = secretInput || BAKED_SECRET;
+    try {
+      const form = new FormData();
+      form.append('csv', csvFile);
+      const res = await fetch('/api/sync', {
+        method: 'POST',
+        headers: secret ? { Authorization: `Bearer ${secret}` } : {},
+        body: form,
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setIsError(true);
+        setResult(json.error ?? `Error ${res.status}`);
+      } else {
+        const d = json.data;
+        setResult(
+          `Sync complete — ${d.advisersAdded} added, ${d.advisersUpdated} updated, ` +
+          `${d.movementsAdded} movements detected (as at ${d.asAtDate})`
+        );
+        setCsvFile(null);
+        if (fileInputRef.current) fileInputRef.current.value = '';
         fetchLogs();
       }
     } catch (e) {
@@ -202,6 +239,50 @@ export default function AdminPage() {
             </div>
           )}
         </div>
+      </div>
+
+      {/* Manual CSV upload */}
+      <div className="bg-white rounded-lg border p-5 mb-6">
+        <h2 className="text-sm font-semibold mb-1 flex items-center gap-2">
+          <Upload className="w-4 h-4 text-purple-600" />
+          Upload CSV Manually
+        </h2>
+        <p className="text-xs text-muted-foreground mb-3">
+          If the automatic sync is blocked, download the CSV from your browser then upload it here.
+        </p>
+        <a
+          href="https://data.gov.au/data/dataset/f2b7c2c1-f4ef-4ae9-aba5-45c19e4d3038/resource/691ff9ed-b601-481d-8283-88127dbbc869"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-xs text-blue-600 hover:underline mb-3"
+        >
+          <ExternalLink className="w-3.5 h-3.5" />
+          Open ASIC Financial Advisers Dataset on data.gov.au
+        </a>
+        <div className="flex items-center gap-3">
+          <label className="flex-1">
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".csv,text/csv"
+              onChange={e => setCsvFile(e.target.files?.[0] ?? null)}
+              className="block w-full text-xs text-muted-foreground file:mr-3 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-medium file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 cursor-pointer"
+            />
+          </label>
+          <button
+            onClick={uploadAndSync}
+            disabled={!csvFile || syncing}
+            className="flex items-center gap-1.5 px-4 py-2 bg-purple-600 text-white text-xs font-medium rounded-md hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors whitespace-nowrap"
+          >
+            <Upload className="w-3.5 h-3.5" />
+            {syncing ? 'Processing…' : 'Upload & Sync'}
+          </button>
+        </div>
+        {csvFile && (
+          <p className="text-xs text-muted-foreground mt-2">
+            Selected: {csvFile.name} ({(csvFile.size / 1024).toFixed(0)} KB)
+          </p>
+        )}
       </div>
 
       {/* How the sync works */}
