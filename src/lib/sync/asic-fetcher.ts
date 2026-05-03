@@ -15,16 +15,26 @@ import * as https from 'https';
 import * as http from 'http';
 
 // ── Default CSV source ────────────────────────────────────────────────────────
-// The CKAN package API is used to discover the current CSV URL dynamically,
-// so this survives ASIC changing their resource IDs (which they do periodically).
 // Dataset: https://data.gov.au/data/dataset/f2b7c2c1-f4ef-4ae9-aba5-45c19e4d3038
+// Resource: 691ff9ed-b601-481d-8283-88127dbbc869 (Financial Advisers Dataset - Current)
+
+// CKAN DataStore dump — returns CSV directly from the datastore (no download proxy).
+const CKAN_DATASTORE_URL =
+  'https://data.gov.au/datastore/dump/691ff9ed-b601-481d-8283-88127dbbc869?bom=true';
+
 const CKAN_PACKAGE_API =
   'https://data.gov.au/api/3/action/package_show?id=f2b7c2c1-f4ef-4ae9-aba5-45c19e4d3038';
 
-// Fallback: direct CKAN download proxy for resource 691ff9ed (Financial Advisers Dataset - Current)
-// CKAN's /download/ endpoint redirects to the actual file (S3/CDN).
+// Last-resort fallback if both above fail.
 const ASIC_CSV_FALLBACK_URL =
   'https://data.gov.au/data/dataset/f2b7c2c1-f4ef-4ae9-aba5-45c19e4d3038/resource/691ff9ed-b601-481d-8283-88127dbbc869/download/financial-advisers-register.csv';
+
+// Browser-like headers to bypass WAF/bot challenges on data.gov.au.
+const BROWSER_HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'en-AU,en;q=0.5',
+};
 
 /**
  * Downloads a URL using Node.js native https/http, manually following up to
@@ -38,7 +48,7 @@ function fetchWithRedirects(url: string, maxRedirects = 10): Promise<string> {
     function request(currentUrl: string) {
       const lib = currentUrl.startsWith('https') ? https : http;
       lib.get(currentUrl, {
-        headers: { 'User-Agent': 'AdviserDashboard/1.0 data@example.com' },
+        headers: BROWSER_HEADERS,
         timeout: 120_000,
       }, (res) => {
         const { statusCode, statusMessage, headers } = res;
@@ -236,12 +246,25 @@ export async function fetchAsicCsv(override?: string): Promise<AsicRow[]> {
     return parseAsicCsv(fs.readFileSync(localPath, 'utf-8'));
   }
 
-  // Use the explicit override, env URL, or dynamically discover via CKAN API.
-  const src = override
-    ?? (process.env.ASIC_CSV_URL?.startsWith('http') ? process.env.ASIC_CSV_URL : null)
-    ?? await resolveCsvUrl();
+  if (override ?? process.env.ASIC_CSV_URL?.startsWith('http')) {
+    const src = (override ?? process.env.ASIC_CSV_URL) as string;
+    return parseAsicCsv(await fetchWithRedirects(src));
+  }
 
-  // Use native https (not Next.js's patched fetch) to reliably follow redirects.
-  const text = await fetchWithRedirects(src);
+  // 1. Try CKAN DataStore dump — bypasses the download proxy entirely.
+  try {
+    const text = await fetchWithRedirects(CKAN_DATASTORE_URL);
+    if (text.trim().length > 100) return parseAsicCsv(text);
+  } catch { /* fall through */ }
+
+  // 2. Try CKAN package API to discover the real resource URL.
+  try {
+    const src = await resolveCsvUrl();
+    const text = await fetchWithRedirects(src);
+    if (text.trim().length > 100) return parseAsicCsv(text);
+  } catch { /* fall through */ }
+
+  // 3. Last resort: direct fallback URL.
+  const text = await fetchWithRedirects(ASIC_CSV_FALLBACK_URL);
   return parseAsicCsv(text);
 }
